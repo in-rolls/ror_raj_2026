@@ -84,3 +84,15 @@ uv run pytest -q
 ```
 
 `raw/` is not committed. The scraper is published; the records are not.
+
+## Pilot: do khatedars join to ration cards?
+
+`pilot/pilot_join.py` matches the six largest Nagaur villages that share a
+name between this portal and the state's ration-card list, and joins each
+khatedar to the card *members* of the same village on a phonetic key of name
+and father's name. On 5,909 khatedars fetched so far: 24% join, sons 34%,
+wives and daughters under 5% because the khata lists a woman under her father
+and the card under her husband; 11% of joined keys hit more than one card, so
+the key is a candidate, not an identity. `pilot/diag_pairs.py` prints the
+matched pairs for eyeballing and `pilot/diag_father.py` the near-misses.
+The join needs the ration data in `../milaan_raj`, which is not public.
