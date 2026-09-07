@@ -4,7 +4,7 @@ import sys
 import pandas as pd
 
 sys.argv = ["x"]
-import pilot_join as pj
+import pilot_join as pj  # noqa: E402
 
 m = pj.match_villages(6)
 own = pj.load_owners(m["giscode"].tolist())

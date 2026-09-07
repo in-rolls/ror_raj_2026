@@ -172,7 +172,7 @@ def main() -> None:
         how="left",
     )
     print(
-        f"  on name only: {k2c_name['card_no'].notna().sum()} ({k2c_name['card_no'].notna().mean():.1%})"
+        f"  on name only: {k2c_name['card_no'].notna().sum()} ({k2c_name['card_no'].notna().mean():.1%})"  # noqa: E501
     )
     print(
         "  by relation:",
@@ -211,7 +211,7 @@ def main() -> None:
     k2m = kh.merge(mk, on=["giscode", "nk", "fk"], how="left")
     m_hit = k2m["card_no"].notna()
     print(
-        f"\nkhatedar -> any card MEMBER on name+father: {m_hit.sum()} ({m_hit.mean():.1%}) of {len(kh)}; "
+        f"\nkhatedar -> any card MEMBER on name+father: {m_hit.sum()} ({m_hit.mean():.1%}) of {len(kh)}; "  # noqa: E501
         f"members in pilot villages: {len(mem)}"
     )
     print(
@@ -233,7 +233,7 @@ def main() -> None:
     k2l = k2l[k2l["card_no"].isna() | compatible(k2l)].drop_duplicates(["giscode", "nk", "fk"])
     l_hit = k2l["card_no"].notna()
     print(
-        f"khatedar -> any card MEMBER on suffix-stripped name+father: {l_hit.sum()} ({l_hit.mean():.1%})"
+        f"khatedar -> any card MEMBER on suffix-stripped name+father: {l_hit.sum()} ({l_hit.mean():.1%})"  # noqa: E501
     )
     print(
         "  by relation:",
@@ -259,18 +259,18 @@ def main() -> None:
     c2l = c2l[compatible(c2l)]
     cl = c2l.groupby("card_no").agg(jati=("jati", "first"), n_jati=("jati", "nunique"))
     print(
-        f"  cards with >=1 khatedar member (loose): {len(cl)} ({len(cl) / len(cards):.1%}); disagreeing on jati: {(cl['n_jati'] > 1).sum()}"
+        f"  cards with >=1 khatedar member (loose): {len(cl)} ({len(cl) / len(cards):.1%}); disagreeing on jati: {(cl['n_jati'] > 1).sum()}"  # noqa: E501
     )
-    # ambiguity: one khatedar key hitting members on several cards, or one card hit by several khatedar keys
+    # ambiguity: one khatedar key hitting members on several cards, or one card hit by several khatedar keys  # noqa: E501
     kk = c2l.groupby(["giscode", "nl", "fl"])["card_no"].nunique()
     print(
-        f"  khatedar keys matching members on >1 card: {(kk > 1).sum()} of {len(kk)} ({(kk > 1).mean():.1%})"
+        f"  khatedar keys matching members on >1 card: {(kk > 1).sum()} of {len(kk)} ({(kk > 1).mean():.1%})"  # noqa: E501
     )
     ck2 = c2l.groupby("card_no").apply(lambda d: d[["nl", "fl"]].drop_duplicates().shape[0])
     print(f"  cards hit by >1 distinct khatedar key: {(ck2 > 1).sum()} of {len(ck2)}")
     unamb = cl[(cl["n_jati"] == 1)]
     print(
-        f"  cards with a single, unambiguous jati: {len(unamb)} ({len(unamb) / len(cards):.1%} of cards)"
+        f"  cards with a single, unambiguous jati: {len(unamb)} ({len(unamb) / len(cards):.1%} of cards)"  # noqa: E501
     )
 
     # card -> jati via any member who is a khatedar
@@ -297,7 +297,7 @@ def main() -> None:
         how="left",
     )
     print(
-        f"cards joined on name only within village: {j2['jati'].notna().sum()} ({j2['jati'].notna().mean():.1%})"
+        f"cards joined on name only within village: {j2['jati'].notna().sum()} ({j2['jati'].notna().mean():.1%})"  # noqa: E501
     )
     print(
         "\ncategory of joined cards:\n",

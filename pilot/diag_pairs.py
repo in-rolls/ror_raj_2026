@@ -3,7 +3,7 @@ import sys
 import pandas as pd
 
 sys.argv = ["x"]
-import pilot_join as pj
+import pilot_join as pj  # noqa: E402
 
 m = pj.match_villages(6)
 own = pj.load_owners(m["giscode"].tolist())
@@ -52,7 +52,7 @@ print(
 print(j[j.tier == "loose"].sample(20, random_state=4)[cols].to_string())
 print(j[j.tier == "exact"].sample(10, random_state=4)[cols].to_string())
 j[cols + ["card_no", "plotno", "khata"]].to_csv("pilot/matched_pairs.csv", index=False)
-from categorise import categorise
+from categorise import categorise  # noqa: E402
 
 j["cat"] = j.jati.map(lambda x: categorise(x)[0])
 g = (
