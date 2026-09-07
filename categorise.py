@@ -82,7 +82,7 @@ def categorise(jati: str | None, fuzzy: float = 0.9) -> tuple[str, str | None, s
     ``how`` is ``exact`` for a key match, ``fuzzy`` for a close key, ``none``
     when nothing in the schedules is near it.
     """
-    if not jati:
+    if not isinstance(jati, str) or not jati.strip():
         return "unlisted", None, "none"
     table = schedules()
     keys = list(table)
