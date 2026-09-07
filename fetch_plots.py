@@ -105,6 +105,7 @@ def crawl_sheet(session: Session, giscode: str, miss_run: int, max_plot: int) ->
                 hits += 1
                 rec.update(ok=True, via=via.get(str(plot)))
                 fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                fh.flush()
                 continue
             try:
                 data = session.plot_info(giscode, str(plot))
@@ -124,6 +125,7 @@ def crawl_sheet(session: Session, giscode: str, miss_run: int, max_plot: int) ->
                     known.add(other)
                     via.setdefault(other, str(plot))
             fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            fh.flush()
         fh.write(json.dumps({"giscode": giscode, "done": True, "high": plot}) + "\n")
     return tried, hits
 

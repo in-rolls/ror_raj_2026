@@ -9,6 +9,7 @@ authors = [{ name = "Gaurav Sood" }]
 keywords = ["rajasthan", "land-records", "bhunaksha", "jamabandi", "caste", "india", "scraper"]
 dependencies = [
   "certifi>=2024.2",
+  "indic-transliteration>=2.3.82",
   "pandas>=2.2",
   "pyarrow>=15",
   "requests>=2.32",
@@ -22,7 +23,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-py-modules = ["bhunaksha", "list_locations", "fetch_plots", "parse_plots"]
+py-modules = ["bhunaksha", "list_locations", "fetch_plots", "parse_plots", "categorise"]
 
 [tool.black]
 line-length = 100
