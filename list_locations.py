@@ -2,8 +2,8 @@
 
 Six levels: district, tehsil, RI circle, halka, village, sheet. The sheet is
 the unit ``getPlotInfo`` is keyed on, so it is the unit the crawl is keyed on.
-Villages typically have one or two sheets; the second is usually a
-resurvey (``(चालु)`` against ``(पुराना)``) rather than a second area.
+Villages typically have one sheet; a village listed twice, as ``(गत)`` past
+and ``(चालु)`` current, carries one code and is folded to the current row.
 
 Checkpointed per district as gzipped JSONL under ``raw/locations/`` so an
 interrupted run resumes at the district it was in, and folded into
@@ -25,7 +25,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from bhunaksha import LEVEL_LABELS, LEVELS, PortalError, Session, giscode
+from bhunaksha import LEVEL_LABELS, LEVELS, Session, giscode
 
 HERE = Path(__file__).resolve().parent
 LOCATIONS = HERE / "raw" / "locations"
@@ -74,9 +74,13 @@ def fold() -> pd.DataFrame:
         with gzip.open(p, "rt", encoding="utf-8") as fh:
             frames.append(pd.DataFrame([json.loads(line) for line in fh]))
     df = pd.concat(frames, ignore_index=True)
-    dupes = df["giscode"].duplicated().sum()
-    if dupes:
-        raise PortalError(f"{dupes} duplicate giscodes across districts")
+    # A village the portal lists twice, as "(गत)" past and "(चालु)" current,
+    # carries one code and so one giscode; the current row is kept.
+    df = df.sort_values("village_name", key=lambda s: ~s.str.contains("चालु", na=False))
+    dupes = df["giscode"].duplicated()
+    if dupes.any():
+        log.info("%d sheets listed twice (past/current village pair); keeping current", dupes.sum())
+    df = df[~dupes].sort_values(["district_code", "tehsil_code", "village_code", "sheet_code"])
     df.to_parquet(VILLAGES, index=False)
     return df
 
