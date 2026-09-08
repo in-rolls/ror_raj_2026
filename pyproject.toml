@@ -98,7 +98,11 @@ minversion = "8"
 testpaths = ["tests"]
 log_level = "INFO"
 xfail_strict = true
-filterwarnings = ["error"]
+filterwarnings = [
+    "error",
+    # indic_transliteration reads its data with codecs.open(); Python 3.14 deprecates it.
+    'ignore:codecs.open\(\) is deprecated:DeprecationWarning',
+]
 addopts = ["-ra", "--strict-config", "--strict-markers"]
 
 [tool.coverage.run]
