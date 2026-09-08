@@ -3,10 +3,15 @@ name = "rajasthan-ror"
 version = "0.1.0"
 description = "Rajasthan land records (jamabandi) via Bhu-Naksha: khatedar name, father, jati and residence per plot"
 readme = "README.md"
-requires-python = ">=3.11"
-license = { text = "MIT" }
-authors = [{ name = "Gaurav Sood" }]
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Gaurav Sood", email = "gsood07@gmail.com" }]
+requires-python = ">=3.12"
 keywords = ["rajasthan", "land-records", "bhunaksha", "jamabandi", "caste", "india", "scraper"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+]
 dependencies = [
   "certifi>=2024.2",
   "indic-transliteration>=2.3.82",
@@ -15,19 +20,88 @@ dependencies = [
   "requests>=2.32",
 ]
 
-[project.optional-dependencies]
-dev = ["pytest>=8", "black>=24", "isort>=5", "flake8>=7"]
+[project.urls]
+Homepage = "https://github.com/in-rolls/rajasthan-ror"
+Documentation = "https://in-rolls.github.io/rajasthan-ror/"
+Repository = "https://github.com/in-rolls/rajasthan-ror"
+
+[project.scripts]
+rajasthan-ror-list = "rajasthan_ror.locations:main"
+rajasthan-ror-fetch = "rajasthan_ror.plots:main"
+rajasthan-ror-parse = "rajasthan_ror.parse:main"
 
 [build-system]
-requires = ["setuptools>=77"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.12.5,<0.13"]
+build-backend = "uv_build"
 
-[tool.setuptools]
-py-modules = ["bhunaksha", "list_locations", "fetch_plots", "parse_plots", "categorise"]
+[tool.uv.build-backend]
+module-name = "rajasthan_ror"
 
-[tool.black]
-line-length = 100
+[dependency-groups]
+dev = [
+    "ruff>=0.14",
+    "pyright>=1.1.390",
+    "pydoclint>=0.5",
+    "pre-commit>=4",
+    { include-group = "test" },
+]
+test = ["pytest>=8", "pytest-cov>=6"]
+docs = [
+    "sphinx>=8",
+    "py-canon @ git+https://github.com/gojiplus/py-canon@v1",
+    "furo",
+    "myst-parser",
+    "sphinx-copybutton",
+]
 
-[tool.isort]
-profile = "black"
-line_length = 100
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+external = ["DOC"]
+select = [
+    "E", "W", "F", "I", "B", "C4", "UP", "N", "D", "S", "SIM", "T20", "PT", "RUF",
+    "PTH", "RET", "PIE", "FURB", "PERF", "DTZ", "LOG", "G", "TC", "FLY",
+    "RSE", "SLOT", "FA", "A", "EXE", "ICN", "PGH", "PLE", "ARG", "SLF",
+]
+# D203/D213: the google convention the fleet standard picks. W191/D206/D300:
+# ruff's own docs list these as always incompatible with `ruff format`, which
+# the standard also runs.
+ignore = ["D203", "D213", "W191", "D206", "D300"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "D", "ARG", "SLF"]
+"docs/**" = ["D"]
+# Analysis scripts, not package code: they report by printing and assert on
+# the data they load.
+"scripts/**" = ["T20", "D", "S101"]
+
+[tool.pyright]
+include = ["src"]
+typeCheckingMode = "standard"
+
+[tool.pydoclint]
+style = "google"
+arg-type-hints-in-docstring = false
+check-return-types = false
+check-yield-types = false
+check-class-attributes = false
+allow-init-docstring = true
+exclude = '\.venv|tests|docs'
+
+[tool.pytest.ini_options]
+minversion = "8"
+testpaths = ["tests"]
+log_level = "INFO"
+xfail_strict = true
+filterwarnings = ["error"]
+addopts = ["-ra", "--strict-config", "--strict-markers"]
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.preen]

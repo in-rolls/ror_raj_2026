@@ -2,6 +2,8 @@ import sys
 
 import pandas as pd
 
+from rajasthan_ror.categorise import categorise
+
 sys.argv = ["x"]
 import pilot_join as pj  # noqa: E402
 
@@ -12,12 +14,16 @@ kh["nk"] = kh.name.map(pj.norm_name)
 kh["fk"] = kh.relative.map(pj.norm_name)
 kh = kh.drop_duplicates(["giscode", "nk", "fk"])
 kh["nl"], kh["fl"] = kh.nk.map(pj.loose), kh.fk.map(pj.loose)
-cards = pd.read_parquet(pj.MILAAN / "data/ration/cards/district_code=112/data_0.parquet")
+cards = pd.read_parquet(
+    pj.MILAAN / "data/ration/cards/district_code=112/data_0.parquet"
+)
 cards = cards[cards.village_code.astype(str).isin(m.Village_Code.astype(str))].copy()
 cards["giscode"] = cards.village_code.astype(str).map(
-    dict(zip(m.Village_Code.astype(str), m.giscode))
+    dict(zip(m.Village_Code.astype(str), m.giscode, strict=True))
 )
-mem = pd.read_parquet(pj.MILAAN / "data/ration/members/district_code=112/data_0.parquet")
+mem = pd.read_parquet(
+    pj.MILAAN / "data/ration/members/district_code=112/data_0.parquet"
+)
 mem = mem[mem.card_no.isin(cards.card_no)].merge(
     cards[["card_no", "giscode", "card_type_raw"]], on="card_no"
 )
@@ -51,9 +57,9 @@ print(
 )
 print(j[j.tier == "loose"].sample(20, random_state=4)[cols].to_string())
 print(j[j.tier == "exact"].sample(10, random_state=4)[cols].to_string())
-j[cols + ["card_no", "plotno", "khata"]].to_csv("pilot/matched_pairs.csv", index=False)
-from categorise import categorise  # noqa: E402
-
+j[[*cols, "card_no", "plotno", "khata"]].to_csv(
+    "raw/pilot/matched_pairs.csv", index=False
+)
 j["cat"] = j.jati.map(lambda x: categorise(x)[0])
 g = (
     j.dropna(subset=["jati"])

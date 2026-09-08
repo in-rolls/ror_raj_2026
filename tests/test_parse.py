@@ -1,9 +1,5 @@
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from parse_plots import rows_from_record, split_info, split_owner  # noqa: E402
+from rajasthan_ror.parse import rows_from_record, split_info, split_owner
+from rajasthan_ror.plots import integer_plots
 
 RURAL = (
     "1.) गुलाब सिंह चीता पुत्र अमर सिंह   हिस्सा- 2/3 "
@@ -64,9 +60,16 @@ def test_info_block_and_record_rows():
     assert p["area_ha"] == 0.06
     assert p["khata"] == "847"
     assert [o["owner_seq"] for o in p["owners"]] == [1, 2]
-    rec = {"ok": True, "giscode": "0100207450292011035001", "plotno": "4", "data": {"info": info}}
+    rec = {
+        "ok": True,
+        "giscode": "0100207450292011035001",
+        "plotno": "4",
+        "data": {"info": info},
+    }
     rows = rows_from_record(rec)
-    assert len(rows) == 2 and rows[0]["n_owners"] == 2 and rows[1]["plotno"] == "4"
+    assert len(rows) == 2
+    assert rows[0]["n_owners"] == 2
+    assert rows[1]["plotno"] == "4"
     assert rows_from_record({"ok": False, "giscode": "x", "plotno": "1"}) == []
 
 
@@ -81,13 +84,13 @@ def test_via_record_borrows_its_source():
     via = {"ok": True, "giscode": "g", "plotno": "8", "via": "7"}
     by_plot = {"7": src["data"]}
     rows = rows_from_record(via, by_plot)
-    assert len(rows) == 1 and rows[0]["plotno"] == "8" and rows[0]["via"] == "7"
+    assert len(rows) == 1
+    assert rows[0]["plotno"] == "8"
+    assert rows[0]["via"] == "7"
     assert rows_from_record(via, None) == []
 
 
-def test_int_plots_reads_both_shapes():
-    from fetch_plots import _int_plots
-
-    assert _int_plots(["3", "12", "287/807"]) == {"3", "12"}
-    assert _int_plots("['3', '12']") == {"3", "12"}
-    assert _int_plots(None) == set()
+def test_integer_plots_reads_both_shapes():
+    assert integer_plots(["3", "12", "287/807"]) == {"3", "12"}
+    assert integer_plots("['3', '12']") == {"3", "12"}
+    assert integer_plots(None) == set()

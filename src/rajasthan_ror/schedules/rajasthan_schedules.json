@@ -1,0 +1,2651 @@
+{
+ "schema_version": 1,
+ "entries": [
+  {
+   "category": "SC",
+   "entry_no": 1,
+   "entry": "Adi Dharmi",
+   "synonym": "Adi Dharmi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 2,
+   "entry": "Aheri",
+   "synonym": "Aheri",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 3,
+   "entry": "Badi",
+   "synonym": "Badi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 4,
+   "entry": "Bagri, Bagdi",
+   "synonym": "Bagri",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 4,
+   "entry": "Bagri, Bagdi",
+   "synonym": "Bagdi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 5,
+   "entry": "Bairwa, Berwa",
+   "synonym": "Bairwa",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 5,
+   "entry": "Bairwa, Berwa",
+   "synonym": "Berwa",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 6,
+   "entry": "Bajgar",
+   "synonym": "Bajgar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 7,
+   "entry": "Balai",
+   "synonym": "Balai",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 8,
+   "entry": "Bansphor, Bansphod",
+   "synonym": "Bansphor",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 8,
+   "entry": "Bansphor, Bansphod",
+   "synonym": "Bansphod",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 9,
+   "entry": "Baori",
+   "synonym": "Baori",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 10,
+   "entry": "Bargi, Vargi, Birgi",
+   "synonym": "Bargi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 10,
+   "entry": "Bargi, Vargi, Birgi",
+   "synonym": "Vargi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 10,
+   "entry": "Bargi, Vargi, Birgi",
+   "synonym": "Birgi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 11,
+   "entry": "Bawaria",
+   "synonym": "Bawaria",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 12,
+   "entry": "Bedia, Baria",
+   "synonym": "Bedia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 12,
+   "entry": "Bedia, Baria",
+   "synonym": "Baria",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 13,
+   "entry": "Bhand",
+   "synonym": "Bhand",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Bhangi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Chura",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Mehtar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Olgana",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Rukhi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Malkana",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Halalkhor",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Lalbegi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Balmiki",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Valmiki",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Korar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 14,
+   "entry": "Bhangi, Chura, Mehtar, Olgana, Rukhi, Malkana, Halalkhor, Lalbegi, Balmiki, Valmiki, Korar, Zadmalli",
+   "synonym": "Zadmalli",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 15,
+   "entry": "Bidakia",
+   "synonym": "Bidakia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 16,
+   "entry": "Bola",
+   "synonym": "Bola",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Chamar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Bhambhi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Bambhi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Jatia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Jatava",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Mochi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Raidas",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Rohidas",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Regar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Raigar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Ramdasia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Asadaru",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Asodi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Chamadia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Chambhar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Chamgar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Haralavya",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Harali",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Khalpa",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Machigar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Mochigar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Madar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Madig",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Telegu",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Kamati",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Ranigar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Rohit",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 17,
+   "entry": "Chamar, Bhambhi, Bambhi, Jatia, Jatava, Mochi, Raidas, Rohidas, Regar, Raigar, Ramdasia, Asadaru, Asodi, Chamadia, Chambhar, Chamgar, Haralavya, Harali, Khalpa, Machigar, Mochigar, Madar, Madig, Telegu, Mochi, Kamati, Mochi, Ranigar, Rohit, Samgar",
+   "synonym": "Samgar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 18,
+   "entry": "Chandal",
+   "synonym": "Chandal",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 19,
+   "entry": "Dabgar",
+   "synonym": "Dabgar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 20,
+   "entry": "Dhanak, Dhanuk",
+   "synonym": "Dhanak",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 20,
+   "entry": "Dhanak, Dhanuk",
+   "synonym": "Dhanuk",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 21,
+   "entry": "Dhankia",
+   "synonym": "Dhankia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 22,
+   "entry": "Dhobi",
+   "synonym": "Dhobi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 23,
+   "entry": "Dholi",
+   "synonym": "Dholi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 24,
+   "entry": "Dome, Dom",
+   "synonym": "Dome",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 24,
+   "entry": "Dome, Dom",
+   "synonym": "Dom",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 25,
+   "entry": "Gandia",
+   "synonym": "Gandia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 26,
+   "entry": "Garancha, Gancha",
+   "synonym": "Garancha",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 26,
+   "entry": "Garancha, Gancha",
+   "synonym": "Gancha",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 27,
+   "entry": "Garo,Garura, Gurda, Garoda",
+   "synonym": "Garo",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 27,
+   "entry": "Garo,Garura, Gurda, Garoda",
+   "synonym": "Garura",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 27,
+   "entry": "Garo,Garura, Gurda, Garoda",
+   "synonym": "Gurda",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 27,
+   "entry": "Garo,Garura, Gurda, Garoda",
+   "synonym": "Garoda",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 28,
+   "entry": "Gavaria",
+   "synonym": "Gavaria",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 29,
+   "entry": "Godhi",
+   "synonym": "Godhi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 30,
+   "entry": "Jingar",
+   "synonym": "Jingar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 31,
+   "entry": "Kalbelia, Sapera",
+   "synonym": "Kalbelia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 31,
+   "entry": "Kalbelia, Sapera",
+   "synonym": "Sapera",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 32,
+   "entry": "Kamad, Kamadia",
+   "synonym": "Kamad",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 32,
+   "entry": "Kamad, Kamadia",
+   "synonym": "Kamadia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 33,
+   "entry": "Kanjar, Kunjar",
+   "synonym": "Kanjar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 33,
+   "entry": "Kanjar, Kunjar",
+   "synonym": "Kunjar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 34,
+   "entry": "Kapaida, Sansi",
+   "synonym": "Kapaida",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 34,
+   "entry": "Kapaida, Sansi",
+   "synonym": "Sansi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 35,
+   "entry": "Khangar",
+   "synonym": "Khangar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 36,
+   "entry": "Khatik",
+   "synonym": "Khatik",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 37,
+   "entry": "Koli, Kori",
+   "synonym": "Koli",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 37,
+   "entry": "Koli, Kori",
+   "synonym": "Kori",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 38,
+   "entry": "Kooch Band, Kuchband",
+   "synonym": "Kooch Band",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 38,
+   "entry": "Kooch Band, Kuchband",
+   "synonym": "Kuchband",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 39,
+   "entry": "Koria",
+   "synonym": "Koria",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 40,
+   "entry": "Madari, Bazigar",
+   "synonym": "Madari",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 40,
+   "entry": "Madari, Bazigar",
+   "synonym": "Bazigar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Mahar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Taral",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Dhegumegu",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Mahyavanshi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Dhed",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Dheda",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Vankar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 41,
+   "entry": "Mahar, Taral, Dhegumegu, Mahyavanshi, Dhed, Dheda, Vankar, Maru, Vankar.",
+   "synonym": "Maru",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 42,
+   "entry": "Majhabi",
+   "synonym": "Majhabi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 43,
+   "entry": "Mang, Matang, Minimadig",
+   "synonym": "Mang",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 43,
+   "entry": "Mang, Matang, Minimadig",
+   "synonym": "Matang",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 43,
+   "entry": "Mang, Matang, Minimadig",
+   "synonym": "Minimadig",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 44,
+   "entry": "Mang, Garodi, Mang Garudi",
+   "synonym": "Mang",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 44,
+   "entry": "Mang, Garodi, Mang Garudi",
+   "synonym": "Garodi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 44,
+   "entry": "Mang, Garodi, Mang Garudi",
+   "synonym": "Mang Garudi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 45,
+   "entry": "Megh, Meghval, Meghwal, Menghvar",
+   "synonym": "Megh",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 45,
+   "entry": "Megh, Meghval, Meghwal, Menghvar",
+   "synonym": "Meghval",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 45,
+   "entry": "Megh, Meghval, Meghwal, Menghvar",
+   "synonym": "Meghwal",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 45,
+   "entry": "Megh, Meghval, Meghwal, Menghvar",
+   "synonym": "Menghvar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 46,
+   "entry": "Mehar",
+   "synonym": "Mehar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 47,
+   "entry": "Nat, Nut",
+   "synonym": "Nat",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 47,
+   "entry": "Nat, Nut",
+   "synonym": "Nut",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 48,
+   "entry": "Pasi",
+   "synonym": "Pasi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 49,
+   "entry": "Rawal",
+   "synonym": "Rawal",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 50,
+   "entry": "Salvi",
+   "synonym": "Salvi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 51,
+   "entry": "Sansi",
+   "synonym": "Sansi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 52,
+   "entry": "Santia, Satia",
+   "synonym": "Santia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 52,
+   "entry": "Santia, Satia",
+   "synonym": "Satia",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 53,
+   "entry": "Sarbhangi",
+   "synonym": "Sarbhangi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 54,
+   "entry": "Sargara",
+   "synonym": "Sargara",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 55,
+   "entry": "Singiwala",
+   "synonym": "Singiwala",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 56,
+   "entry": "Thori, Nayak",
+   "synonym": "Thori",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 56,
+   "entry": "Thori, Nayak",
+   "synonym": "Nayak",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 57,
+   "entry": "Tirgar, Tirbanda",
+   "synonym": "Tirgar",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 57,
+   "entry": "Tirgar, Tirbanda",
+   "synonym": "Tirbanda",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "SC",
+   "entry_no": 58,
+   "entry": "Turi",
+   "synonym": "Turi",
+   "source": "sje.rajasthan.gov.in PageID=65"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Bhil",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Bhil Garasia",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Dholi Bhil",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Dungri Bhil",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Dungri Garasia",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Mewasi Bhil",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Rawal Bhil",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Tadvi Bhil",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Bhagalia",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Bhilala",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Pawra",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 1,
+   "entry": "Bhil, Bhil Garasia, Dholi Bhil, Dungri Bhil, Dungri Garasia, Mewasi Bhil, Rawal Bhil, Tadvi Bhil.Bhagalia,Bhilala,Pawra,Vasava",
+   "synonym": "Vasava",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 2,
+   "entry": "Bhil Mina",
+   "synonym": "Bhil Mina",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 3,
+   "entry": "Damor, Damaria",
+   "synonym": "Damor",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 3,
+   "entry": "Damor, Damaria",
+   "synonym": "Damaria",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 4,
+   "entry": "Dhanka, Tadvi, Tetaria, Valvi",
+   "synonym": "Dhanka",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 4,
+   "entry": "Dhanka, Tadvi, Tetaria, Valvi",
+   "synonym": "Tadvi",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 4,
+   "entry": "Dhanka, Tadvi, Tetaria, Valvi",
+   "synonym": "Tetaria",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 4,
+   "entry": "Dhanka, Tadvi, Tetaria, Valvi",
+   "synonym": "Valvi",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 5,
+   "entry": "Garasia (Excluding Rajput Garasia.)",
+   "synonym": "Garasia (Excluding Rajput Garasia",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 5,
+   "entry": "Garasia (Excluding Rajput Garasia.)",
+   "synonym": ")",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 6,
+   "entry": "Kathodi, Katkari, Dhor Kathodi, Dhor Katkari, Son Kathodi, Son Katkari",
+   "synonym": "Kathodi",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 6,
+   "entry": "Kathodi, Katkari, Dhor Kathodi, Dhor Katkari, Son Kathodi, Son Katkari",
+   "synonym": "Katkari",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 6,
+   "entry": "Kathodi, Katkari, Dhor Kathodi, Dhor Katkari, Son Kathodi, Son Katkari",
+   "synonym": "Dhor Kathodi",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 6,
+   "entry": "Kathodi, Katkari, Dhor Kathodi, Dhor Katkari, Son Kathodi, Son Katkari",
+   "synonym": "Dhor Katkari",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 6,
+   "entry": "Kathodi, Katkari, Dhor Kathodi, Dhor Katkari, Son Kathodi, Son Katkari",
+   "synonym": "Son Kathodi",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 6,
+   "entry": "Kathodi, Katkari, Dhor Kathodi, Dhor Katkari, Son Kathodi, Son Katkari",
+   "synonym": "Son Katkari",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 7,
+   "entry": "Kokna, Kokni, Kukna",
+   "synonym": "Kokna",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 7,
+   "entry": "Kokna, Kokni, Kukna",
+   "synonym": "Kokni",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 7,
+   "entry": "Kokna, Kokni, Kukna",
+   "synonym": "Kukna",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 8,
+   "entry": "Koli Dhor, Tokre Koli, Kolcha, Kolgha",
+   "synonym": "Koli Dhor",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 8,
+   "entry": "Koli Dhor, Tokre Koli, Kolcha, Kolgha",
+   "synonym": "Tokre Koli",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 8,
+   "entry": "Koli Dhor, Tokre Koli, Kolcha, Kolgha",
+   "synonym": "Kolcha",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 8,
+   "entry": "Koli Dhor, Tokre Koli, Kolcha, Kolgha",
+   "synonym": "Kolgha",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 9,
+   "entry": "Mina",
+   "synonym": "Mina",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 10,
+   "entry": "Naikda, Nayaka, Cholivala Nayaka, Kapadia Nayaka, Mota Nayaka, Nana Nayaka",
+   "synonym": "Naikda",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 10,
+   "entry": "Naikda, Nayaka, Cholivala Nayaka, Kapadia Nayaka, Mota Nayaka, Nana Nayaka",
+   "synonym": "Nayaka",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 10,
+   "entry": "Naikda, Nayaka, Cholivala Nayaka, Kapadia Nayaka, Mota Nayaka, Nana Nayaka",
+   "synonym": "Cholivala Nayaka",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 10,
+   "entry": "Naikda, Nayaka, Cholivala Nayaka, Kapadia Nayaka, Mota Nayaka, Nana Nayaka",
+   "synonym": "Kapadia Nayaka",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 10,
+   "entry": "Naikda, Nayaka, Cholivala Nayaka, Kapadia Nayaka, Mota Nayaka, Nana Nayaka",
+   "synonym": "Mota Nayaka",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 10,
+   "entry": "Naikda, Nayaka, Cholivala Nayaka, Kapadia Nayaka, Mota Nayaka, Nana Nayaka",
+   "synonym": "Nana Nayaka",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 11,
+   "entry": "Patelia",
+   "synonym": "Patelia",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 12,
+   "entry": "Seharia, Sehria, Sahariya ",
+   "synonym": "Seharia",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 12,
+   "entry": "Seharia, Sehria, Sahariya ",
+   "synonym": "Sehria",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "ST",
+   "entry_no": 12,
+   "entry": "Seharia, Sehria, Sahariya ",
+   "synonym": "Sahariya",
+   "source": "sje.rajasthan.gov.in PageID=66"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 1,
+   "entry": "Ahir (Yadav)",
+   "synonym": "Ahir",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 1,
+   "entry": "Ahir (Yadav)",
+   "synonym": "Yadav",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 2,
+   "entry": "Badwa, Jachak, Bhat, Jaga,Rao",
+   "synonym": "Badwa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 2,
+   "entry": "Badwa, Jachak, Bhat, Jaga,Rao",
+   "synonym": "Jachak",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 2,
+   "entry": "Badwa, Jachak, Bhat, Jaga,Rao",
+   "synonym": "Bhat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 2,
+   "entry": "Badwa, Jachak, Bhat, Jaga,Rao",
+   "synonym": "Jaga",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 2,
+   "entry": "Badwa, Jachak, Bhat, Jaga,Rao",
+   "synonym": "Rao",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 3,
+   "entry": "Charan",
+   "synonym": "Charan",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 4,
+   "entry": "Bagaria",
+   "synonym": "Bagaria",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 5,
+   "entry": "Banjara, Baladia, Labana",
+   "synonym": "Banjara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 5,
+   "entry": "Banjara, Baladia, Labana",
+   "synonym": "Baladia",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 5,
+   "entry": "Banjara, Baladia, Labana",
+   "synonym": "Labana",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 6,
+   "entry": "Badai, Jangid, Khati,Suthar, Tarkhan",
+   "synonym": "Badai",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 6,
+   "entry": "Badai, Jangid, Khati,Suthar, Tarkhan",
+   "synonym": "Jangid",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 6,
+   "entry": "Badai, Jangid, Khati,Suthar, Tarkhan",
+   "synonym": "Khati",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 6,
+   "entry": "Badai, Jangid, Khati,Suthar, Tarkhan",
+   "synonym": "Suthar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 6,
+   "entry": "Badai, Jangid, Khati,Suthar, Tarkhan",
+   "synonym": "Tarkhan",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 7,
+   "entry": "Bharbhuja",
+   "synonym": "Bharbhuja",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Chippa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Chhipi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Bhavsar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Nama",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Khatti Chippa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Rangrej",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 8,
+   "entry": "Chippa (Chhipi), Bhavsar, Nama, Khatti Chippa, Rangrej, Neelgar",
+   "synonym": "Neelgar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 9,
+   "entry": "Dakot, Deshantri, Rangasami (Adbhopa)",
+   "synonym": "Dakot",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 9,
+   "entry": "Dakot, Deshantri, Rangasami (Adbhopa)",
+   "synonym": "Deshantri",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 9,
+   "entry": "Dakot, Deshantri, Rangasami (Adbhopa)",
+   "synonym": "Rangasami",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 9,
+   "entry": "Dakot, Deshantri, Rangasami (Adbhopa)",
+   "synonym": "Adbhopa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 10,
+   "entry": "Nagarchi-Damami, Rana, Baiti(Barot)",
+   "synonym": "Nagarchi-Damami",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 10,
+   "entry": "Nagarchi-Damami, Rana, Baiti(Barot)",
+   "synonym": "Rana",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 10,
+   "entry": "Nagarchi-Damami, Rana, Baiti(Barot)",
+   "synonym": "Baiti",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 10,
+   "entry": "Nagarchi-Damami, Rana, Baiti(Barot)",
+   "synonym": "Barot",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 11,
+   "entry": "Daroga, Ravana-Rajput, Hazuri Wazir",
+   "synonym": "Daroga",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 11,
+   "entry": "Daroga, Ravana-Rajput, Hazuri Wazir",
+   "synonym": "Ravana-Rajput",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 11,
+   "entry": "Daroga, Ravana-Rajput, Hazuri Wazir",
+   "synonym": "Hazuri Wazir",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 12,
+   "entry": "Darzi",
+   "synonym": "Darzi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 13,
+   "entry": "Dhakad",
+   "synonym": "Dhakad",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Dhiver",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Kahar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Bhoi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Sagarvansi-Mali",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Keer",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Mehra",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Mallah",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Nisad",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Bari",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Bhisti",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 14,
+   "entry": "Dhiver, Kahar, Bhoi, Sagarvansi-Mali, Keer, Mehra, Mallah (Nisad), Bari, Bhisti, Machhuara",
+   "synonym": "Machhuara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 15,
+   "entry": "Gadaria (Gadri), Gayri, Ghosi (Gvala)",
+   "synonym": "Gadaria",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 15,
+   "entry": "Gadaria (Gadri), Gayri, Ghosi (Gvala)",
+   "synonym": "Gadri",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 15,
+   "entry": "Gadaria (Gadri), Gayri, Ghosi (Gvala)",
+   "synonym": "Gayri",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 15,
+   "entry": "Gadaria (Gadri), Gayri, Ghosi (Gvala)",
+   "synonym": "Ghosi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 15,
+   "entry": "Gadaria (Gadri), Gayri, Ghosi (Gvala)",
+   "synonym": "Gvala",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 16,
+   "entry": "Gadia_lohar, Gadolia",
+   "synonym": "Gadia_lohar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 16,
+   "entry": "Gadia_lohar, Gadolia",
+   "synonym": "Gadolia",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 17,
+   "entry": "Ghanchi",
+   "synonym": "Ghanchi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 18,
+   "entry": "Teli",
+   "synonym": "Teli",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 19,
+   "entry": "Giri, Gosain(Gushain)",
+   "synonym": "Giri",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 19,
+   "entry": "Giri, Gosain(Gushain)",
+   "synonym": "Gosain",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 19,
+   "entry": "Giri, Gosain(Gushain)",
+   "synonym": "Gushain",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 20,
+   "entry": "Gujar, Gurjar",
+   "synonym": "Gujar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 20,
+   "entry": "Gujar, Gurjar",
+   "synonym": "Gurjar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 21,
+   "entry": "Hela",
+   "synonym": "Hela",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 22,
+   "entry": "Janwa, Khardiya (Sirvi)",
+   "synonym": "Janwa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 22,
+   "entry": "Janwa, Khardiya (Sirvi)",
+   "synonym": "Khardiya",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 22,
+   "entry": "Janwa, Khardiya (Sirvi)",
+   "synonym": "Sirvi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 23,
+   "entry": "Julaha",
+   "synonym": "Julaha",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 24,
+   "entry": "Jogi, Nath, Sidh",
+   "synonym": "Jogi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 24,
+   "entry": "Jogi, Nath, Sidh",
+   "synonym": "Nath",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 24,
+   "entry": "Jogi, Nath, Sidh",
+   "synonym": "Sidh",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 25,
+   "entry": "Kachhi (Kushwaha), Shakya",
+   "synonym": "Kachhi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 25,
+   "entry": "Kachhi (Kushwaha), Shakya",
+   "synonym": "Kushwaha",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 25,
+   "entry": "Kachhi (Kushwaha), Shakya",
+   "synonym": "Shakya",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 26,
+   "entry": "Kelal (Tak)",
+   "synonym": "Kelal",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 26,
+   "entry": "Kelal (Tak)",
+   "synonym": "Tak",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 27,
+   "entry": "Kandera, Pinijara",
+   "synonym": "Kandera",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 27,
+   "entry": "Kandera, Pinijara",
+   "synonym": "Pinijara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 28,
+   "entry": "Kanbi, Kalbi, Patel, Patidar Anjana, Dangi Patel, Kulmi",
+   "synonym": "Kanbi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 28,
+   "entry": "Kanbi, Kalbi, Patel, Patidar Anjana, Dangi Patel, Kulmi",
+   "synonym": "Kalbi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 28,
+   "entry": "Kanbi, Kalbi, Patel, Patidar Anjana, Dangi Patel, Kulmi",
+   "synonym": "Patel",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 28,
+   "entry": "Kanbi, Kalbi, Patel, Patidar Anjana, Dangi Patel, Kulmi",
+   "synonym": "Patidar Anjana",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 28,
+   "entry": "Kanbi, Kalbi, Patel, Patidar Anjana, Dangi Patel, Kulmi",
+   "synonym": "Dangi Patel",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 28,
+   "entry": "Kanbi, Kalbi, Patel, Patidar Anjana, Dangi Patel, Kulmi",
+   "synonym": "Kulmi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 29,
+   "entry": "Kharol (Kharwal)",
+   "synonym": "Kharol",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 29,
+   "entry": "Kharol (Kharwal)",
+   "synonym": "Kharwal",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 30,
+   "entry": "Kirar(Kirad)",
+   "synonym": "Kirar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 30,
+   "entry": "Kirar(Kirad)",
+   "synonym": "Kirad",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 31,
+   "entry": "Kumhar(Prajapati), Kumawat, Suara",
+   "synonym": "Kumhar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 31,
+   "entry": "Kumhar(Prajapati), Kumawat, Suara",
+   "synonym": "Prajapati",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 31,
+   "entry": "Kumhar(Prajapati), Kumawat, Suara",
+   "synonym": "Kumawat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 31,
+   "entry": "Kumhar(Prajapati), Kumawat, Suara",
+   "synonym": "Suara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 32,
+   "entry": "Lakhera (Lakhara), Kachera, Manihar",
+   "synonym": "Lakhera",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 32,
+   "entry": "Lakhera (Lakhara), Kachera, Manihar",
+   "synonym": "Lakhara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 32,
+   "entry": "Lakhera (Lakhara), Kachera, Manihar",
+   "synonym": "Kachera",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 32,
+   "entry": "Lakhera (Lakhara), Kachera, Manihar",
+   "synonym": "Manihar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 33,
+   "entry": "Lodhi(Lodha)",
+   "synonym": "Lodhi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 33,
+   "entry": "Lodhi(Lodha)",
+   "synonym": "Lodha",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 34,
+   "entry": "Lohar, Panchal",
+   "synonym": "Lohar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 34,
+   "entry": "Lohar, Panchal",
+   "synonym": "Panchal",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 35,
+   "entry": "Mahabrahiman(Acharaj), Fakir (working in Kabristan)",
+   "synonym": "Mahabrahiman",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 35,
+   "entry": "Mahabrahiman(Acharaj), Fakir (working in Kabristan)",
+   "synonym": "Acharaj",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 35,
+   "entry": "Mahabrahiman(Acharaj), Fakir (working in Kabristan)",
+   "synonym": "Fakir",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 35,
+   "entry": "Mahabrahiman(Acharaj), Fakir (working in Kabristan)",
+   "synonym": "working in Kabristan",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 36,
+   "entry": "Mali, Saini, Bagwan",
+   "synonym": "Mali",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 36,
+   "entry": "Mali, Saini, Bagwan",
+   "synonym": "Saini",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 36,
+   "entry": "Mali, Saini, Bagwan",
+   "synonym": "Bagwan",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 37,
+   "entry": "Mer,(Mehrat-Kathat, Mehrat, Ghodat, Cheeta)",
+   "synonym": "Mer",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 37,
+   "entry": "Mer,(Mehrat-Kathat, Mehrat, Ghodat, Cheeta)",
+   "synonym": "Mehrat-Kathat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 37,
+   "entry": "Mer,(Mehrat-Kathat, Mehrat, Ghodat, Cheeta)",
+   "synonym": "Mehrat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 37,
+   "entry": "Mer,(Mehrat-Kathat, Mehrat, Ghodat, Cheeta)",
+   "synonym": "Ghodat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 37,
+   "entry": "Mer,(Mehrat-Kathat, Mehrat, Ghodat, Cheeta)",
+   "synonym": "Cheeta",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 38,
+   "entry": "Mirasi, Dhadi, Langa/Mangniyar",
+   "synonym": "Mirasi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 38,
+   "entry": "Mirasi, Dhadi, Langa/Mangniyar",
+   "synonym": "Dhadi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 38,
+   "entry": "Mirasi, Dhadi, Langa/Mangniyar",
+   "synonym": "Langa/Mangniyar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 39,
+   "entry": "Mogia (Mogya)",
+   "synonym": "Mogia",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 39,
+   "entry": "Mogia (Mogya)",
+   "synonym": "Mogya",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 40,
+   "entry": "Nai, Sen, Vednai",
+   "synonym": "Nai",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 40,
+   "entry": "Nai, Sen, Vednai",
+   "synonym": "Sen",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 40,
+   "entry": "Nai, Sen, Vednai",
+   "synonym": "Vednai",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 41,
+   "entry": "Nyaria (Nyargar)",
+   "synonym": "Nyaria",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 41,
+   "entry": "Nyaria (Nyargar)",
+   "synonym": "Nyargar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 42,
+   "entry": "Odd",
+   "synonym": "Odd",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 43,
+   "entry": "Patwa (Phadal)",
+   "synonym": "Patwa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 43,
+   "entry": "Patwa (Phadal)",
+   "synonym": "Phadal",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 44,
+   "entry": "Raika, Rebari (Debasi)",
+   "synonym": "Raika",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 44,
+   "entry": "Raika, Rebari (Debasi)",
+   "synonym": "Rebari",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 44,
+   "entry": "Raika, Rebari (Debasi)",
+   "synonym": "Debasi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 45,
+   "entry": "Rawat",
+   "synonym": "Rawat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 46,
+   "entry": "Sad, Swami, Bairagi, Jangam",
+   "synonym": "Sad",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 46,
+   "entry": "Sad, Swami, Bairagi, Jangam",
+   "synonym": "Swami",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 46,
+   "entry": "Sad, Swami, Bairagi, Jangam",
+   "synonym": "Bairagi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 46,
+   "entry": "Sad, Swami, Bairagi, Jangam",
+   "synonym": "Jangam",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 47,
+   "entry": "Satiya-Sindhi",
+   "synonym": "Satiya-Sindhi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 48,
+   "entry": "Sikligar, Bandooksaz (Usta)",
+   "synonym": "Sikligar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 48,
+   "entry": "Sikligar, Bandooksaz (Usta)",
+   "synonym": "Bandooksaz",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 48,
+   "entry": "Sikligar, Bandooksaz (Usta)",
+   "synonym": "Usta",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 49,
+   "entry": "Sirkiwal",
+   "synonym": "Sirkiwal",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 50,
+   "entry": "Swarankar, Sunar, Soni, Jadia",
+   "synonym": "Swarankar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 50,
+   "entry": "Swarankar, Sunar, Soni, Jadia",
+   "synonym": "Sunar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 50,
+   "entry": "Swarankar, Sunar, Soni, Jadia",
+   "synonym": "Soni",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 50,
+   "entry": "Swarankar, Sunar, Soni, Jadia",
+   "synonym": "Jadia",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 51,
+   "entry": "Thathera, Kansara (Bharava )",
+   "synonym": "Thathera",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 51,
+   "entry": "Thathera, Kansara (Bharava )",
+   "synonym": "Kansara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 51,
+   "entry": "Thathera, Kansara (Bharava )",
+   "synonym": "Bharava",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 52,
+   "entry": "Tamoli (Tamboli)",
+   "synonym": "Tamoli",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 52,
+   "entry": "Tamoli (Tamboli)",
+   "synonym": "Tamboli",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 53,
+   "entry": "Jagri",
+   "synonym": "Jagri",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 54,
+   "entry": "Jat",
+   "synonym": "Jat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 55,
+   "entry": "Raisikh",
+   "synonym": "Raisikh",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 56,
+   "entry": "Halali, Kasai",
+   "synonym": "Halali",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 56,
+   "entry": "Halali, Kasai",
+   "synonym": "Kasai",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 57,
+   "entry": "Dangi",
+   "synonym": "Dangi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 58,
+   "entry": "Lodhe - Tanwar",
+   "synonym": "Lodhe - Tanwar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 59,
+   "entry": "Sondhia",
+   "synonym": "Sondhia",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 60,
+   "entry": "Vishnoi",
+   "synonym": "Vishnoi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 61,
+   "entry": "Mev",
+   "synonym": "Mev",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 62,
+   "entry": "Gaddee",
+   "synonym": "Gaddee",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 63,
+   "entry": "Farooki Bhatiyara",
+   "synonym": "Farooki Bhatiyara",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 64,
+   "entry": "Silawat (other than Sompura and Murtikaar)",
+   "synonym": "Silawat",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 64,
+   "entry": "Silawat (other than Sompura and Murtikaar)",
+   "synonym": "other than Sompura and Murtikaar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 65,
+   "entry": "Kherwa",
+   "synonym": "Kherwa",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 66,
+   "entry": "Dhobi (Muslim)",
+   "synonym": "Dhobi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 66,
+   "entry": "Dhobi (Muslim)",
+   "synonym": "Muslim",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 67,
+   "entry": "Kayamkhani",
+   "synonym": "Kayamkhani",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 68,
+   "entry": "Kunjada, Raen",
+   "synonym": "Kunjada",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 68,
+   "entry": "Kunjada, Raen",
+   "synonym": "Raen",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 69,
+   "entry": "Sapera (Non Hindu Caste)",
+   "synonym": "Sapera",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 69,
+   "entry": "Sapera (Non Hindu Caste)",
+   "synonym": "Non Hindu Caste",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 70,
+   "entry": "Madari, Bazigar (Non Hindu Caste)",
+   "synonym": "Madari",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 70,
+   "entry": "Madari, Bazigar (Non Hindu Caste)",
+   "synonym": "Bazigar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 70,
+   "entry": "Madari, Bazigar (Non Hindu Caste)",
+   "synonym": "Non Hindu Caste",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 71,
+   "entry": "Nut (Non Hindu Caste)",
+   "synonym": "Nut",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 71,
+   "entry": "Nut (Non Hindu Caste)",
+   "synonym": "Non Hindu Caste",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 72,
+   "entry": "Gadeet Nagauri",
+   "synonym": "Gadeet Nagauri",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 73,
+   "entry": "Sindhi Musalman",
+   "synonym": "Sindhi Musalman",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 74,
+   "entry": "Kheldar",
+   "synonym": "Kheldar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 75,
+   "entry": "Chungar",
+   "synonym": "Chungar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 76,
+   "entry": "Ratth",
+   "synonym": "Ratth",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 77,
+   "entry": "Multanies",
+   "synonym": "Multanies",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 78,
+   "entry": "Orphan Children",
+   "synonym": "Orphan Children",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 79,
+   "entry": "Mochi (Non Hindu Caste)",
+   "synonym": "Mochi",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 79,
+   "entry": "Mochi (Non Hindu Caste)",
+   "synonym": "Non Hindu Caste",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 80,
+   "entry": "Deshwali",
+   "synonym": "Deshwali",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 81,
+   "entry": "Kotwal / Kotwal",
+   "synonym": "Kotwal / Kotwal",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "OBC",
+   "entry_no": 82,
+   "entry": "Chobdaar",
+   "synonym": "Chobdaar",
+   "source": "sje.rajasthan.gov.in PageID=67 (state list, English page)"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 1,
+   "entry": "Gujar, Gurjar",
+   "synonym": "Gujar",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 1,
+   "entry": "Gujar, Gurjar",
+   "synonym": "Gurjar",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 2,
+   "entry": "Banjara, Baldia, Labana",
+   "synonym": "Banjara",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 2,
+   "entry": "Banjara, Baldia, Labana",
+   "synonym": "Baldia",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 2,
+   "entry": "Banjara, Baldia, Labana",
+   "synonym": "Labana",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 3,
+   "entry": "Gadia-Lohar, Gadolia",
+   "synonym": "Gadia-Lohar",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 3,
+   "entry": "Gadia-Lohar, Gadolia",
+   "synonym": "Gadia Lohar",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 3,
+   "entry": "Gadia-Lohar, Gadolia",
+   "synonym": "Gadolia",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 4,
+   "entry": "Raika, Rebari, Debasi",
+   "synonym": "Raika",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 4,
+   "entry": "Raika, Rebari, Debasi",
+   "synonym": "Rebari",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 4,
+   "entry": "Raika, Rebari, Debasi",
+   "synonym": "Debasi",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 5,
+   "entry": "Gadaria, Gadri, Gayari",
+   "synonym": "Gadaria",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 5,
+   "entry": "Gadaria, Gadri, Gayari",
+   "synonym": "Gadri",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  },
+  {
+   "category": "MBC",
+   "entry_no": 5,
+   "entry": "Gadaria, Gadri, Gayari",
+   "synonym": "Gayari",
+   "source": "Rajasthan Backward Classes (Amendment) Act 2019"
+  }
+ ]
+}

@@ -9,20 +9,21 @@ applicant (name, father) within the village and report join rates.
 from __future__ import annotations
 
 import argparse
+import gzip
+import json
 import re
-import sys
 import unicodedata
 from pathlib import Path
 
 import pandas as pd
 
-ROR = Path("/Users/soodoku/Documents/GitHub/rajasthan-ror")
-MILAAN = Path("/Users/soodoku/Documents/GitHub/milaan_raj")
-OUT = ROR / "raw" / "pilot"
-sys.path.insert(0, str(ROR))
+from rajasthan_ror.categorise import categorise, key
+from rajasthan_ror.parse import rows_from_record
+from rajasthan_ror.paths import PLOTS_DIR, RAW_DIR, VILLAGES_FILE
 
-from categorise import categorise, key  # noqa: E402
-from parse_plots import rows_from_record  # noqa: E402
+# The ration data is a private sibling checkout, not a dependency.
+MILAAN = Path(__file__).resolve().parents[3] / "milaan_raj"
+OUT = RAW_DIR / "pilot"
 
 NAGAUR_RATION = 112
 NAGAUR_PORTAL = "21"
@@ -45,7 +46,8 @@ def norm_name(s: str) -> str:
 
 SUFFIX = re.compile(r"(rm|ll|sing|sinh|cnd|cndr|ds|kumr)$")
 # a land-record relation and a card relationship that cannot be the same person:
-# a daughter of X is not the wife of X, and the card's father field is the husband for a wife
+# a daughter of X is not the wife of X, and the card's father field is the
+# husband for a wife
 INCOMPATIBLE = {
     ("पुत्री", "पत्नी"),
     ("पत्नि", "बेटी"),
@@ -58,19 +60,22 @@ INCOMPATIBLE = {
 
 
 def compatible(df: pd.DataFrame) -> pd.Series:
-    return ~pd.Series(list(zip(df["relation"], df["relationship_dev"])), index=df.index).isin(
-        INCOMPATIBLE
-    )
+    return ~pd.Series(
+        list(zip(df["relation"], df["relationship_dev"], strict=True)), index=df.index
+    ).isin(INCOMPATIBLE)
 
 
 def loose(k: str) -> str:
-    """Key with a trailing name suffix removed: गोपीराम and गोपी, शंकरलाल and शंकर, agree."""
+    """Key with a trailing name suffix removed.
+
+    गोपीराम and गोपी, शंकरलाल and शंकर, agree.
+    """
     s = SUFFIX.sub("", k)
     return s if len(s) >= 3 else k
 
 
 def match_villages(top: int) -> pd.DataFrame:
-    vil = pd.read_parquet(ROR / "raw" / "villages.parquet")
+    vil = pd.read_parquet(VILLAGES_FILE)
     vil = vil[vil["district_code"] == NAGAUR_PORTAL].copy()
     vil["vkey"] = vil["village_name"].map(norm_village)
     rat = pd.read_csv(MILAAN / "data/raw/rural_village.csv.gz")
@@ -90,22 +95,20 @@ def match_villages(top: int) -> pd.DataFrame:
 
 
 def load_owners(giscodes: list[str]) -> pd.DataFrame:
-    import gzip
-    import json
-
     rows = []
     for g in giscodes:
-        p = ROR / "raw" / "plots" / f"{g}.jsonl.gz"
+        p = PLOTS_DIR / f"{g}.jsonl.gz"
         if not p.exists():
             continue
         recs = []
         try:
             with gzip.open(p, "rt", encoding="utf-8") as fh:
-                for line in fh:
-                    recs.append(json.loads(line))
+                recs.extend(json.loads(line) for line in fh)
         except (EOFError, OSError):
             pass
-        by_plot = {r["plotno"]: r["data"] for r in recs if r.get("ok") and r.get("data")}
+        by_plot = {
+            r["plotno"]: r["data"] for r in recs if r.get("ok") and r.get("data")
+        }
         for r in recs:
             rows.extend(rows_from_record(r, by_plot))
     return pd.DataFrame(rows)
@@ -129,7 +132,8 @@ def main() -> None:
     own = load_owners(m["giscode"].tolist())
     own.to_parquet(OUT / "owners.parquet", index=False)
     print(
-        f"\nowner rows {len(own)}, plots {own['plotno'].nunique()}, khatas {own['khata'].nunique()}"
+        f"\nowner rows {len(own)}, plots {own['plotno'].nunique()}, "
+        f"khatas {own['khata'].nunique()}"
     )
     print("jati filled:", f"{own['jati'].notna().mean():.1%}")
     cat = own["jati"].map(lambda j: categorise(j)[0])
@@ -144,8 +148,10 @@ def main() -> None:
     cards = pd.read_parquet(
         MILAAN / f"data/ration/cards/district_code={NAGAUR_RATION}/data_0.parquet"
     )
-    cards = cards[cards["village_code"].astype(str).isin(m["Village_Code"].astype(str))].copy()
-    vmap = dict(zip(m["Village_Code"].astype(str), m["giscode"]))
+    cards = cards[
+        cards["village_code"].astype(str).isin(m["Village_Code"].astype(str))
+    ].copy()
+    vmap = dict(zip(m["Village_Code"].astype(str), m["giscode"], strict=True))
     cards["giscode"] = cards["village_code"].astype(str).map(vmap)
     cards["nk"] = cards["applicant_dev"].map(norm_name)
     cards["fk"] = cards["father_dev"].map(norm_name)
@@ -158,13 +164,17 @@ def main() -> None:
     kh = kh.drop_duplicates(["giscode", "nk", "fk"])
     kh["nl"], kh["fl"] = kh["nk"].map(loose), kh["fk"].map(loose)
 
-    # khatedar -> card: of the landholders fetched so far, how many have a ration card here?
-    ck = cards.drop_duplicates(["giscode", "nk", "fk"])[["giscode", "nk", "fk", "card_no"]]
+    # khatedar -> card: of the landholders fetched so far, how many have a
+    # ration card here?
+    ck = cards.drop_duplicates(["giscode", "nk", "fk"])[
+        ["giscode", "nk", "fk", "card_no"]
+    ]
     k2c = kh.merge(ck, on=["giscode", "nk", "fk"], how="left")
     kh_hit = k2c["card_no"].notna()
     print(
         f"\nkhatedars (distinct name+father) fetched so far: {len(kh)}; "
-        f"with a ration card in the village on name+father: {kh_hit.sum()} ({kh_hit.mean():.1%})"
+        f"with a ration card in the village on name+father: {kh_hit.sum()} "
+        f"({kh_hit.mean():.1%})"
     )
     k2c_name = kh.merge(
         cards.drop_duplicates(["giscode", "nk"])[["giscode", "nk", "card_no"]],
@@ -195,7 +205,8 @@ def main() -> None:
     )
     print("  sample of unmatched khatedars:\n", miss.to_string())
 
-    # khatedar -> any member of any card in the village (sons are members on the father's card)
+    # khatedar -> any member of any card in the village (sons are members on
+    # the father's card)
     mem = pd.read_parquet(
         MILAAN / f"data/ration/members/district_code={NAGAUR_RATION}/data_0.parquet"
     )
@@ -230,7 +241,9 @@ def main() -> None:
         ["giscode", "nl", "fl", "card_no", "relationship_dev"]
     ]
     k2l = kh.merge(ml, on=["giscode", "nl", "fl"], how="left")
-    k2l = k2l[k2l["card_no"].isna() | compatible(k2l)].drop_duplicates(["giscode", "nk", "fk"])
+    k2l = k2l[k2l["card_no"].isna() | compatible(k2l)].drop_duplicates(
+        ["giscode", "nk", "fk"]
+    )
     l_hit = k2l["card_no"].notna()
     print(
         f"khatedar -> any card MEMBER on suffix-stripped name+father: {l_hit.sum()} ({l_hit.mean():.1%})"  # noqa: E501
@@ -266,7 +279,9 @@ def main() -> None:
     print(
         f"  khatedar keys matching members on >1 card: {(kk > 1).sum()} of {len(kk)} ({(kk > 1).mean():.1%})"  # noqa: E501
     )
-    ck2 = c2l.groupby("card_no").apply(lambda d: d[["nl", "fl"]].drop_duplicates().shape[0])
+    ck2 = c2l.groupby("card_no").apply(
+        lambda d: d[["nl", "fl"]].drop_duplicates().shape[0]
+    )
     print(f"  cards hit by >1 distinct khatedar key: {(ck2 > 1).sum()} of {len(ck2)}")
     unamb = cl[(cl["n_jati"] == 1)]
     print(
@@ -275,18 +290,25 @@ def main() -> None:
 
     # card -> jati via any member who is a khatedar
     c2j = mem.merge(
-        kh[["giscode", "nk", "fk", "jati", "category"]], on=["giscode", "nk", "fk"], how="inner"
+        kh[["giscode", "nk", "fk", "jati", "category"]],
+        on=["giscode", "nk", "fk"],
+        how="inner",
     )
     cj = c2j.groupby("card_no").agg(
-        jati=("jati", "first"), category=("category", "first"), n_jati=("jati", "nunique")
+        jati=("jati", "first"),
+        category=("category", "first"),
+        n_jati=("jati", "nunique"),
     )
     print(
-        f"cards with >=1 khatedar member: {len(cj)} ({len(cj) / len(cards):.1%} of {len(cards)}); "
+        f"cards with >=1 khatedar member: {len(cj)} "
+        f"({len(cj) / len(cards):.1%} of {len(cards)}); "
         f"cards whose khatedar members disagree on jati: {(cj['n_jati'] > 1).sum()}"
     )
 
     j = cards.merge(
-        kh[["giscode", "nk", "fk", "jati", "category"]], on=["giscode", "nk", "fk"], how="left"
+        kh[["giscode", "nk", "fk", "jati", "category"]],
+        on=["giscode", "nk", "fk"],
+        how="left",
     )
     hit = j["jati"].notna()
     print(f"\nration cards in pilot villages: {len(cards)}; khatedars: {len(kh)}")

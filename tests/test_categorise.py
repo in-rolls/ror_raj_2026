@@ -1,9 +1,22 @@
-import sys
-from pathlib import Path
+import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from rajasthan_ror.categorise import (
+    CATEGORY_ORDER,
+    ENTRY_KEYS,
+    categorise,
+    key,
+    pieces,
+    schedule_entries,
+)
 
-from categorise import categorise, key, pieces  # noqa: E402
+
+def test_schedules_load_and_validate():
+    entries = schedule_entries()
+    assert len(entries) == 378
+    assert all(set(entry) == set(ENTRY_KEYS) for entry in entries)
+    assert all(entry["category"] in CATEGORY_ORDER for entry in entries)
+    triples = {(e["category"], e["entry_no"], e["synonym"]) for e in entries}
+    assert len(triples) == len(entries)
 
 
 def test_key_bridges_devanagari_and_roman():
@@ -15,13 +28,19 @@ def test_key_bridges_devanagari_and_roman():
     assert key("मीणा") == key("Mina") == key("Meena")
 
 
-def test_schedule_lookups():
-    assert categorise("मेघवाल")[0] == "SC"
-    assert categorise("भील")[0] == "ST"
-    assert categorise("जाट")[0] == "OBC"
-    assert categorise("गुर्जर")[0] == "MBC"
-    assert categorise("रैगर")[0] == "SC"
-    assert categorise("हरिजन")[0] == "unlisted"
+@pytest.mark.parametrize(
+    ("jati", "category"),
+    [
+        ("मेघवाल", "SC"),
+        ("भील", "ST"),
+        ("जाट", "OBC"),
+        ("गुर्जर", "MBC"),
+        ("रैगर", "SC"),
+        ("हरिजन", "unlisted"),
+    ],
+)
+def test_schedule_lookups(jati, category):
+    assert categorise(jati)[0] == category
 
 
 def test_narrower_list_wins_and_glosses_are_tried():

@@ -1,4 +1,9 @@
-# Rajasthan Record of Rights
+# rajasthan-ror
+
+[![PyPI](https://img.shields.io/pypi/v/rajasthan-ror)](https://pypi.org/project/rajasthan-ror/)
+[![CI](https://github.com/in-rolls/rajasthan-ror/actions/workflows/ci.yml/badge.svg)](https://github.com/in-rolls/rajasthan-ror/actions/workflows/ci.yml)
+[![Docs](https://github.com/in-rolls/rajasthan-ror/actions/workflows/docs.yml/badge.svg)](https://in-rolls.github.io/rajasthan-ror/)
+[![Python](https://img.shields.io/pypi/pyversions/rajasthan-ror)](https://pypi.org/project/rajasthan-ror/)
 
 Khatedar name, father's or husband's name, **jati** and residence for every
 integer-numbered plot on Rajasthan's digitised cadastre, scraped from the
@@ -76,23 +81,29 @@ recorded on every row, so mutations made after that date are not reflected.
 ## Run
 
 ```
-uv sync --all-extras
-uv run python list_locations.py                       # raw/villages.parquet
-uv run python fetch_plots.py --districts 21 --workers 6
-uv run python parse_plots.py                          # raw/owners.parquet
+uv sync --all-groups
+uv run rajasthan-ror-list                              # raw/villages.parquet
+uv run rajasthan-ror-fetch --districts 21 --workers 6
+uv run rajasthan-ror-parse                             # raw/owners.parquet
 uv run pytest -q
 ```
 
-`raw/` is not committed. The scraper is published; the records are not.
+`raw/` is created under the directory the commands are run from, so run
+them from the repository root (`crawl.sh` does). `raw/` is not committed.
+The scraper is published; the records are not.
+
+The schedule synonyms the categoriser matches against ship with the package
+as `src/rajasthan_ror/schedules/rajasthan_schedules.json`, one entry per
+published synonym with its category, entry number and source.
 
 ## Pilot: do khatedars join to ration cards?
 
-`pilot/pilot_join.py` matches the six largest Nagaur villages that share a
+`scripts/pilot/pilot_join.py` matches the six largest Nagaur villages that share a
 name between this portal and the state's ration-card list, and joins each
 khatedar to the card *members* of the same village on a phonetic key of name
 and father's name. On 5,909 khatedars fetched so far: 24% join, sons 34%,
 wives and daughters under 5% because the khata lists a woman under her father
 and the card under her husband; 11% of joined keys hit more than one card, so
-the key is a candidate, not an identity. `pilot/diag_pairs.py` prints the
-matched pairs for eyeballing and `pilot/diag_father.py` the near-misses.
+the key is a candidate, not an identity. `scripts/pilot/diag_pairs.py` prints the
+matched pairs for eyeballing and `scripts/pilot/diag_father.py` the near-misses.
 The join needs the ration data in `../milaan_raj`, which is not public.
