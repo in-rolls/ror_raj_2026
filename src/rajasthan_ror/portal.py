@@ -27,9 +27,12 @@ import json
 import logging
 import time
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import requests
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 BASE = "https://bhunaksha.rajasthan.gov.in/"
 STATE = "08"
@@ -37,6 +40,13 @@ LEVELS = 6
 LEVEL_LABELS = ("district", "tehsil", "ri", "halka", "village", "sheet")
 
 log = logging.getLogger(__name__)
+
+# The portal's name stopped resolving for seven hours on 8 Sept 2026 while the
+# host itself, once reached, answered normally. A crawl that gives up in
+# fifteen seconds loses the whole window; one that waits it out loses nothing.
+CONNECT_BACKOFF_START = 5.0
+CONNECT_BACKOFF_CAP = 600.0
+CONNECT_BACKOFF_TOTAL = 7200.0
 
 
 class PortalError(RuntimeError):
@@ -59,11 +69,63 @@ class Level:
     has_data: bool
 
 
+def with_connection_backoff[T](
+    call: Callable[[], T],
+    *,
+    what: str,
+    sleep: Callable[[float], None] = time.sleep,
+    total: float = CONNECT_BACKOFF_TOTAL,
+) -> T:
+    """Run ``call`` until it stops failing at the connection level.
+
+    Name resolution, connect and read failures are retried with a delay that
+    doubles from :data:`CONNECT_BACKOFF_START` to :data:`CONNECT_BACKOFF_CAP`
+    for up to ``total`` seconds. Anything the portal actually answers is not
+    a connection failure and is returned to the caller as is.
+
+    Args:
+        call: The request to make.
+        what: Label for the log.
+        sleep: Sleep function; tests pass a recorder.
+        total: Seconds of waiting after which to give up.
+
+    Returns:
+        Whatever ``call`` returns once it succeeds.
+
+    Raises:
+        PortalError: When ``total`` seconds of retrying did not get through.
+    """
+    delay, waited, attempt = CONNECT_BACKOFF_START, 0.0, 0
+    while True:
+        try:
+            return call()
+        except (requests.ConnectionError, requests.Timeout) as exc:
+            attempt += 1
+            if waited >= total:
+                raise PortalError(
+                    f"{what}: unreachable for {waited:.0f}s: {exc}"
+                ) from exc
+            if attempt > 3:
+                log.warning(
+                    "%s: attempt %d failed (%s); retrying in %.0fs",
+                    what,
+                    attempt,
+                    exc,
+                    delay,
+                )
+            sleep(delay)
+            waited += delay
+            delay = min(delay * 2, CONNECT_BACKOFF_CAP)
+
+
 class Session:
     """One HTTP session against the portal, with bounded retries.
 
     The portal has shown no 429s, but latency swings from under a second to
-    several, and a crawl that hammers it is a crawl that gets blocked.
+    several, and a crawl that hammers it is a crawl that gets blocked. A
+    connection-level failure is waited out (see
+    :func:`with_connection_backoff`); an answer the portal gives that is not
+    what was asked for is retried ``retries`` times and then raised.
     """
 
     def __init__(
@@ -89,7 +151,10 @@ class Session:
         self.timeout = timeout
         self.retries = retries
         self._last_request_at = 0.0
-        self.http.get(BASE + "Viewmap/", timeout=timeout)
+        with_connection_backoff(
+            lambda: self.http.get(BASE + "Viewmap/", timeout=timeout),
+            what="GET Viewmap/",
+        )
 
     def _post(self, path: str, **form: str | int) -> str:
         """POST a form to ``path`` and return the body, retrying on failure.
@@ -102,21 +167,22 @@ class Session:
             The response body; empty for a 204.
 
         Raises:
-            PortalError: After ``retries`` failed attempts.
+            PortalError: After ``retries`` unexpected answers, or once the
+                connection back-off is exhausted.
         """
         last_error: Exception | None = None
         for attempt in range(self.retries):
             wait = self.pause - (time.monotonic() - self._last_request_at)
             if wait > 0:
                 time.sleep(wait)
-            try:
-                response = self.http.post(BASE + path, data=form, timeout=self.timeout)
-                self._last_request_at = time.monotonic()
-                if response.status_code in (200, 204):
-                    return response.text
-                last_error = PortalError(f"{path}: HTTP {response.status_code}")
-            except requests.RequestException as exc:
-                last_error = exc
+            response = with_connection_backoff(
+                lambda: self.http.post(BASE + path, data=form, timeout=self.timeout),
+                what=f"POST {path}",
+            )
+            self._last_request_at = time.monotonic()
+            if response.status_code in (200, 204):
+                return response.text
+            last_error = PortalError(f"{path}: HTTP {response.status_code}")
             time.sleep(2**attempt)
         raise PortalError(f"{path}: gave up after {self.retries} tries: {last_error}")
 

@@ -1,11 +1,20 @@
 """Fetch every plot record for every sheet in ``raw/villages.parquet``.
 
 The portal has no call that lists the plots on a sheet; the map finds them by
-click. So the crawl walks plot numbers upward from 1 and stops after
-``--miss-run`` consecutive misses. Khasra numbers are dense integers, but
-subdivided khasras are written ``1256/287`` on the nakal and the portal has
-not answered to that form under any spelling tried, so what this collects is
-the integer-numbered plots. The parse records which numbers were tried.
+click. So the crawl walks plot numbers upward from 1. Khasra numbers are
+dense integers, but subdivided khasras are written ``1256/287`` on the nakal
+and the portal has not answered to that form under any spelling tried, so
+what this collects is the integer-numbered plots. The parse records which
+numbers were tried.
+
+Where a sheet ends is found by probing, not by a long run of misses. Over 68
+finished Nagaur sheets the largest gap inside a sheet's numbering had median
+3 and maximum 57, so a plain miss run had to be 60 to be safe and cost 60
+requests on every sheet, 16% of all requests. Instead, after ``--probe-after``
+consecutive misses the crawl probes ahead at doubling offsets (20, 40, 80,
+160, 320, 640 past the current number). A hit resumes the walk; six misses
+end the sheet. That is 26 requests where 60 were, and it reaches 660 numbers
+past the last hit where the old rule reached 60.
 
 Every hit carries ``ownerplots``, the other plot numbers on the same khata.
 Those share the owner block by construction, so they are recorded as
@@ -21,7 +30,7 @@ next run; one that does not is resumed from the highest plot number tried.
 :mod:`rajasthan_ror.paths`.
 
 Usage:
-    uv run rajasthan-ror-fetch --districts 21 --workers 8 --miss-run 60
+    uv run rajasthan-ror-fetch --districts 21 --workers 8
     uv run rajasthan-ror-fetch --giscodes 0100207450292011035001
 """
 
@@ -46,6 +55,8 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 log = logging.getLogger(__name__)
+
+PROBE_OFFSETS = (20, 40, 80, 160, 320, 640)
 
 
 def sheet_file(giscode: str) -> Path:
@@ -87,6 +98,8 @@ def read_progress(path: Path) -> tuple[int, bool, int, set[str]]:
                 if record.get("done"):
                     done = True
                     continue
+                if not record.get("ok") and record.get("reason") != "miss":
+                    continue  # a failed request: retry it, do not count it as tried
                 highest = max(highest, int(record["plotno"]))
                 hits += bool(record.get("ok"))
                 if record.get("ok") and not record.get("via"):
@@ -115,14 +128,14 @@ def integer_plots(ownerplots: str | list[Any] | None) -> set[str]:
 
 
 def crawl_sheet(
-    session: Session, giscode: str, miss_run: int, max_plot: int
+    session: Session, giscode: str, probe_after: int, max_plot: int
 ) -> tuple[int, int]:
-    """Walk one sheet's plot numbers upward until a run of misses.
+    """Walk one sheet's plot numbers upward, probing ahead to find its end.
 
     Args:
         session: Portal session to fetch with.
         giscode: The sheet to crawl.
-        miss_run: Consecutive misses that end the sheet.
+        probe_after: Consecutive misses after which to probe ahead.
         max_plot: Highest plot number to try.
 
     Returns:
@@ -137,24 +150,26 @@ def crawl_sheet(
     start, done, hits, known = read_progress(path)
     if done:
         return 0, hits
-    misses, tried = 0, 0
+    tried = 0
     via: dict[str, str] = {}
+    probed: set[int] = set()
+
     with gzip.open(path, "at", encoding="utf-8") as fh:
-        plot = start
-        while misses < miss_run and plot < max_plot:
-            plot += 1
+
+        def fetch(plot: int) -> bool:
+            """Fetch one plot number, checkpoint it, and say whether it exists."""
+            nonlocal tried, hits
             record: dict[str, Any] = {
                 "giscode": giscode,
                 "plotno": str(plot),
                 "fetched_at": datetime.now(UTC).isoformat(timespec="seconds"),
             }
             if str(plot) in known:
-                misses = 0
                 hits += 1
                 record.update(ok=True, via=via.get(str(plot)))
                 fh.write(json.dumps(record, ensure_ascii=False) + "\n")
                 fh.flush()
-                continue
+                return True
             try:
                 data = session.plot_info(giscode, str(plot))
             except PortalError as exc:
@@ -163,10 +178,8 @@ def crawl_sheet(
                 raise
             tried += 1
             if data is None:
-                misses += 1
                 record.update(ok=False, reason="miss")
             else:
-                misses = 0
                 hits += 1
                 record.update(ok=True, data=data)
                 for other in integer_plots(data.get("ownerplots")) - {str(plot)}:
@@ -174,6 +187,31 @@ def crawl_sheet(
                     via.setdefault(other, str(plot))
             fh.write(json.dumps(record, ensure_ascii=False) + "\n")
             fh.flush()
+            return data is not None
+
+        plot, misses = start, 0
+        while plot < max_plot:
+            plot += 1
+            if plot in probed:
+                continue
+            if fetch(plot):
+                misses = 0
+                continue
+            misses += 1
+            if misses < probe_after:
+                continue
+            # A run of misses: is there anything further on, or is this the end?
+            found = None
+            for offset in PROBE_OFFSETS:
+                if plot + offset > max_plot:
+                    break
+                probed.add(plot + offset)
+                if fetch(plot + offset):
+                    found = plot + offset
+                    break
+            if found is None:
+                break
+            misses = 0
         fh.write(json.dumps({"giscode": giscode, "done": True, "high": plot}) + "\n")
     return tried, hits
 
@@ -187,7 +225,10 @@ def main() -> None:
     )
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument(
-        "--miss-run", type=int, default=60, help="consecutive misses that end a sheet"
+        "--probe-after",
+        type=int,
+        default=20,
+        help="consecutive misses after which to probe ahead for the sheet's end",
     )
     parser.add_argument("--max-plot", type=int, default=20000)
     parser.add_argument(
@@ -218,15 +259,21 @@ def main() -> None:
     started_at = time.monotonic()
 
     def worker() -> None:
-        session = Session(pause=args.pause)
+        session: Session | None = None
         while True:
             try:
                 giscode = pending.get_nowait()
             except queue.Empty:
                 return
             try:
+                if session is None:
+                    # Opening a session can itself fail at the connection level;
+                    # the back-off inside Session waits that out rather than
+                    # letting this thread die, which is what shrank the pool
+                    # during the 8 Sept outage.
+                    session = Session(pause=args.pause)
                 tried, hits = crawl_sheet(
-                    session, giscode, args.miss_run, args.max_plot
+                    session, giscode, args.probe_after, args.max_plot
                 )
                 with lock:
                     totals["tried"] += tried
@@ -234,15 +281,16 @@ def main() -> None:
                     totals["sheets"] += 1
                     rate = totals["tried"] / max(time.monotonic() - started_at, 1)
                 log.info(
-                    "%s: %d tried, %d plots (%.1f req/s overall)",
+                    "%s: %d tried, %d plots (%.1f req/s overall, %d workers live)",
                     giscode,
                     tried,
                     hits,
                     rate,
+                    sum(t.is_alive() for t in threads),
                 )
             except Exception:  # a sheet failing must not stop the crawl
                 log.exception("sheet %s failed; will resume next run", giscode)
-                session = Session(pause=args.pause)
+                session = None
             finally:
                 pending.task_done()
 
