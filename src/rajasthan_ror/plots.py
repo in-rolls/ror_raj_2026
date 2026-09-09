@@ -72,11 +72,52 @@ def sheet_file(giscode: str) -> Path:
     return PLOTS_DIR / f"{giscode}.jsonl.gz"
 
 
+def trim_truncated(path: Path) -> int:
+    """Cut a checkpoint with a corrupt tail back to its readable prefix.
+
+    gzip readers stop at the first damaged member, so appending to a file a
+    crash cut short would hide every later record from the parser. The
+    file is rewritten whole with only the lines that parse; the crawl then
+    refetches from there.
+
+    Args:
+        path: The sheet's checkpoint file; may not exist yet.
+
+    Returns:
+        Number of lines kept, or zero when the file was intact or absent.
+    """
+    if not path.exists():
+        return 0
+    lines: list[str] = []
+    intact = False
+    try:
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            lines.extend(fh)
+        intact = True
+    except (EOFError, OSError, zlib.error):
+        pass
+    if lines:
+        try:
+            json.loads(lines[-1])
+        except json.JSONDecodeError:
+            lines.pop()
+            intact = False
+    if intact:
+        return 0
+    tmp = path.with_suffix(".tmp")
+    with gzip.open(tmp, "wt", encoding="utf-8") as fh:
+        fh.writelines(lines)
+    tmp.replace(path)
+    log.warning("%s: truncated checkpoint; kept %d lines", path, len(lines))
+    return len(lines)
+
+
 def read_progress(path: Path) -> tuple[int, bool, int, dict[str, str]]:
     """Recover where a sheet's crawl got to from its checkpoint file.
 
     Tolerates a truncated tail from a killed worker: the readable prefix is
-    used and the rest is refetched.
+    used and the rest is refetched. ``trim_truncated`` should run first so
+    the tail is not appended after.
 
     Args:
         path: The sheet's checkpoint file; may not exist yet.
@@ -109,7 +150,7 @@ def read_progress(path: Path) -> tuple[int, bool, int, dict[str, str]]:
                     for other in named - {record["plotno"]}:
                         via.setdefault(other, record["plotno"])
     except (EOFError, OSError, zlib.error):
-        log.warning("%s: truncated checkpoint; resuming after plot %d", path, highest)
+        log.warning("%s: unreadable tail; resuming after plot %d", path, highest)
     return highest, done, hits, via
 
 
@@ -151,6 +192,7 @@ def crawl_sheet(
             checkpointed first so the next run resumes after it.
     """
     path = sheet_file(giscode)
+    trim_truncated(path)
     start, done, hits, via = read_progress(path)
     if done:
         return 0, hits

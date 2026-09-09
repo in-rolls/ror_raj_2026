@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING
 import pytest
 
 from rajasthan_ror import plots
-from rajasthan_ror.plots import crawl_sheet, read_progress
+from rajasthan_ror.plots import crawl_sheet, read_progress, trim_truncated
 from rajasthan_ror.portal import PortalError
 
 if TYPE_CHECKING:
@@ -140,3 +140,24 @@ def test_read_progress_survives_a_corrupt_gzip_tail(plots_dir: Path) -> None:
     highest, done, _, _ = read_progress(path)
     assert not done
     assert 0 < highest < 5000
+
+
+def test_resume_after_corrupt_tail_leaves_a_fully_readable_file(
+    plots_dir: Path,
+) -> None:
+    """Records appended after a crash are visible to a plain gzip reader."""
+    existing = set(range(1, 41))
+    with pytest.raises(PortalError):
+        crawl_sheet(
+            FakeSession(existing, fail_at=30), "g", probe_after=20, max_plot=5000
+        )  # type: ignore[arg-type]
+    path = plots_dir / "g.jsonl.gz"
+    raw = path.read_bytes()
+    path.write_bytes(raw[: len(raw) - 40])
+    assert trim_truncated(path) > 0
+    assert trim_truncated(path) == 0
+    crawl_sheet(FakeSession(existing), "g", probe_after=20, max_plot=5000)  # type: ignore[arg-type]
+    with gzip.open(path, "rt") as fh:
+        lines = [json.loads(line) for line in fh]
+    assert lines[-1].get("done") is True
+    assert sum(bool(r.get("ok")) and "done" not in r for r in lines) >= 40
