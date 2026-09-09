@@ -107,3 +107,36 @@ def test_failure_is_checkpointed_and_resumed(plots_dir: Path) -> None:
     assert min(second.asked) == 25
     assert hits == 40
     assert read_progress(plots_dir / "g.jsonl.gz")[1] is True
+
+
+def test_resumed_run_records_where_known_plots_came_from(plots_dir: Path) -> None:
+    """A plot learnt from ownerplots before the crash is still attributed after it."""
+    existing = set(range(1, 41))
+    with pytest.raises(PortalError):
+        crawl_sheet(
+            FakeSession(existing, fail_at=25), "g", probe_after=20, max_plot=5000
+        )  # type: ignore[arg-type]
+    crawl_sheet(FakeSession(existing), "g", probe_after=20, max_plot=5000)  # type: ignore[arg-type]
+    for record in records(plots_dir / "g.jsonl.gz"):
+        if record.get("ok"):
+            assert "data" in record or record["via"] is not None
+    _, done, hits, _ = read_progress(plots_dir / "g.jsonl.gz")
+    assert done
+    assert hits == 40
+
+
+def test_read_progress_survives_a_corrupt_gzip_tail(plots_dir: Path) -> None:
+    path = plots_dir / "g.jsonl.gz"
+    with gzip.open(path, "wt") as fh:
+        for plot in range(1, 5001):
+            fh.write(
+                json.dumps(
+                    {"giscode": "g", "plotno": str(plot), "ok": True, "data": {}}
+                )
+                + "\n"
+            )
+    raw = path.read_bytes()
+    path.write_bytes(raw[: len(raw) // 2] + b"\x00garbage")
+    highest, done, _, _ = read_progress(path)
+    assert not done
+    assert 0 < highest < 5000

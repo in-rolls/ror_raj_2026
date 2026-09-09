@@ -43,6 +43,7 @@ import logging
 import queue
 import threading
 import time
+import zlib
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Any
 
@@ -71,7 +72,7 @@ def sheet_file(giscode: str) -> Path:
     return PLOTS_DIR / f"{giscode}.jsonl.gz"
 
 
-def read_progress(path: Path) -> tuple[int, bool, int, set[str]]:
+def read_progress(path: Path) -> tuple[int, bool, int, dict[str, str]]:
     """Recover where a sheet's crawl got to from its checkpoint file.
 
     Tolerates a truncated tail from a killed worker: the readable prefix is
@@ -83,11 +84,12 @@ def read_progress(path: Path) -> tuple[int, bool, int, set[str]]:
     Returns:
         Highest plot number tried, whether the sheet is finished, the number
         of hits so far, and the plot numbers already known via
-        ``ownerplots``.
+        ``ownerplots``, each mapped to the plot that named it.
     """
-    highest, done, hits, known = 0, False, 0, set()
+    highest, done, hits = 0, False, 0
+    via: dict[str, str] = {}
     if not path.exists():
-        return highest, done, hits, known
+        return highest, done, hits, via
     try:
         with gzip.open(path, "rt", encoding="utf-8") as fh:
             for line in fh:
@@ -102,11 +104,13 @@ def read_progress(path: Path) -> tuple[int, bool, int, set[str]]:
                     continue  # a failed request: retry it, do not count it as tried
                 highest = max(highest, int(record["plotno"]))
                 hits += bool(record.get("ok"))
-                if record.get("ok") and not record.get("via"):
-                    known.update(integer_plots(record["data"].get("ownerplots")))
-    except (EOFError, OSError):
+                if record.get("ok") and "data" in record:
+                    named = integer_plots(record["data"].get("ownerplots"))
+                    for other in named - {record["plotno"]}:
+                        via.setdefault(other, record["plotno"])
+    except (EOFError, OSError, zlib.error):
         log.warning("%s: truncated checkpoint; resuming after plot %d", path, highest)
-    return highest, done, hits, known
+    return highest, done, hits, via
 
 
 def integer_plots(ownerplots: str | list[Any] | None) -> set[str]:
@@ -147,11 +151,11 @@ def crawl_sheet(
             checkpointed first so the next run resumes after it.
     """
     path = sheet_file(giscode)
-    start, done, hits, known = read_progress(path)
+    start, done, hits, via = read_progress(path)
     if done:
         return 0, hits
     tried = 0
-    via: dict[str, str] = {}
+    known = set(via)
     probed: set[int] = set()
 
     with gzip.open(path, "at", encoding="utf-8") as fh:
