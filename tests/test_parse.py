@@ -1,3 +1,5 @@
+import pytest
+
 from rajasthan_ror.parse import rows_from_record, split_info, split_owner
 from rajasthan_ror.plots import integer_plots
 
@@ -94,3 +96,38 @@ def test_integer_plots_reads_both_shapes():
     assert integer_plots(["3", "12", "287/807"]) == {"3", "12"}
     assert integer_plots("['3', '12']") == {"3", "12"}
     assert integer_plots(None) == set()
+
+
+def test_unnumbered_government_owner_is_preserved_without_invented_sequence():
+    info = "क्षेत्रफल : 0.5 Hectare\nखाता संख्या : 1\nराज. सरकार\n"
+    owner = split_info(info)["owners"][0]
+    assert owner["name"] == "राज. सरकार"
+    assert owner["raw_line"] == "राज. सरकार"
+    assert owner["owner_seq"] is None
+    assert owner["jati"] is None
+    assert split_info("क्षेत्रफल : 0.5 Hectare\nखाता संख्या : 1")["owners"] == []
+
+
+@pytest.mark.parametrize(
+    "boundary", ["गुलाब सिंह", "अमर सिंह", "मेर(मेहरात काठात", "सा. अजयसर"]
+)
+def test_owner_continuations_preserve_all_fields(boundary):
+    wrapped = RURAL.replace(boundary, boundary.replace(" ", "\n", 1))
+    info = "खाता संख्या : 847\n" + wrapped + "\n" + WIFE
+    owners = split_info(info)["owners"]
+    expected = split_owner(RURAL)
+    assert len(owners) == 2
+    assert owners[0]["raw_line"] == wrapped.partition("1.) ")[2]
+    assert {k: v for k, v in owners[0].items() if k != "raw_line"} == {
+        k: v for k, v in expected.items() if k != "raw_line"
+    }
+    assert owners[1] == split_owner(WIFE)
+
+
+def test_metadata_and_government_lines_end_owner_continuations():
+    info = RURAL + "\nराज. सरकार\nखाता संख्या : 847\nक्षेत्रफल : 0.06 Hectare"
+    owners = split_info(info)["owners"]
+    assert len(owners) == 2
+    assert owners[0] == split_owner(RURAL)
+    assert owners[1]["name"] == "राज. सरकार"
+    assert owners[1]["owner_seq"] is None

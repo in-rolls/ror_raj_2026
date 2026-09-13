@@ -1,4 +1,4 @@
-raw/
+/raw
 logs/
 __pycache__/
 *.py[cod]

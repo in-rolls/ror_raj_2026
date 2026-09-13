@@ -92,6 +92,63 @@ uv run pytest -q
 them from the repository root (`crawl.sh` does). `raw/` is not committed.
 The scraper is published; the records are not.
 
+### External storage on this workstation
+
+The local `raw` path links to `/Volumes/Staging/land-records/rajasthan-ror/raw`.
+Raw checkpoints, retained PDFs and all repair backups reside there. Keep Staging
+mounted while crawling or auditing; stop both Supervisor jobs before ejecting it.
+Code, `.venv`, logs and Supervisor configuration stay in this checkout. Audit
+reports distinguish checkout disk space (`free_disk_gb`) from data-volume space
+(`data_free_disk_gb`). The September 12 migration verified every file with SHA-256;
+its receipts are under `/Volumes/Staging/land-records/`.
+
+### Unattended crawl and audits on macOS
+
+```
+uv sync --group crawl
+mkdir -p logs
+.venv/bin/supervisord -c supervisord.conf
+.venv/bin/supervisorctl -c supervisord.conf status
+```
+
+Supervisor runs `crawl.sh`, retries unsuccessful passes after five minutes,
+and restarts crashed processes. The fetcher holds an exclusive checkpoint
+lock and exits successfully only when every queued sheet succeeds. Existing
+location data is reused; unfinished sheets replay saved answers so an earlier
+probe cannot make a restart skip intervening plot numbers. `caffeinate` keeps
+the machine awake while fetching.
+
+The audit runs every 30 minutes. `logs/crawl-health.json` contains the latest
+counts, progress since the previous audit, disk space, and checkpoint issues;
+`logs/crawl-health-history.jsonl` preserves aggregate history. Checks cover
+duplicate answers, sheet keys, missing source references, numbering gaps,
+and truncated files. Census parsing checks cover every saved direct payload and
+validate every inferred reference; fill rates describe all saved payloads, not
+completion of the statewide crawl. A recently modified open
+gzip stream is reported separately from an old truncated tail. Run an audit
+immediately with `.venv/bin/python scripts/crawl_health.py`.
+
+Use `.venv/bin/supervisorctl -c supervisord.conf stop crawl` to pause fetching,
+`start crawl` to resume, and `shutdown` to stop both jobs and Supervisor.
+Supervisor survives closing the terminal, but must be started again after a
+reboot or logout. It cannot fetch while the machine is off or disconnected.
+
+For audited legacy checkpoint repairs, stop both jobs, run a fresh audit,
+then run `.venv/bin/python scripts/repair_checkpoints.py`. The repair requires
+the exclusive writer lock, preserves originals under `raw/checkpoint-backups/`,
+removes premature completion markers and duplicate answers, and reconnects
+inferred records only when saved `ownerplots` supports the reference. Records
+without a recoverable source are queued for refetch. `raw/repair-sheets.txt`
+puts reopened sheets first on the next crawl. Start both jobs again afterward.
+
+The `reviews` Supervisor job runs a combined Rajasthan/Odisha review in the
+existing Codex chat every four hours, waiting for active work to finish if needed. Its runtime configuration and next deadline
+are in `logs/review-schedule.json`; the review instructions are in
+`scripts/crawl_review.md`. Each review compares progress with the prior report,
+investigates anomalies, and verifies any recovery actions. Reports are saved under
+`logs/reviews/` as well as returned in the chat. Keep Codex available for delivery.
+Use `supervisorctl -c supervisord.conf stop reviews` to pause this schedule.
+
 The schedule synonyms the categoriser matches against ship with the package
 as `src/rajasthan_ror/schedules/rajasthan_schedules.json`, one entry per
 published synonym with its category, entry number and source.

@@ -25,7 +25,7 @@ misses. The parse expands them back to one row per plot.
 Checkpointing is per sheet, appended to ``raw/plots/<giscode>.jsonl.gz``, one
 line per plot number tried: ``ok`` true with the portal's JSON, ``ok`` false
 with a reason. A sheet whose file ends with a ``done`` line is skipped on the
-next run; one that does not is resumed from the highest plot number tried.
+next run; one that does not replays saved answers and fetches missing numbers.
 ``raw/`` is under the current working directory; see
 :mod:`rajasthan_ror.paths`.
 
@@ -37,23 +37,23 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import fcntl
 import gzip
 import json
 import logging
 import queue
+import shutil
 import threading
 import time
 import zlib
 from datetime import UTC, datetime
-from typing import TYPE_CHECKING, Any
+from pathlib import Path
+from typing import Any
 
 import pandas as pd
 
 from rajasthan_ror.paths import PLOTS_DIR, VILLAGES_FILE
 from rajasthan_ror.portal import PortalError, Session
-
-if TYPE_CHECKING:
-    from pathlib import Path
 
 log = logging.getLogger(__name__)
 
@@ -77,8 +77,8 @@ def trim_truncated(path: Path) -> int:
 
     gzip readers stop at the first damaged member, so appending to a file a
     crash cut short would hide every later record from the parser. The
-    file is rewritten whole with only the lines that parse; the crawl then
-    refetches from there.
+    original bytes are backed up before the file is rewritten with its
+    readable lines; the crawl then refetches from there.
 
     Args:
         path: The sheet's checkpoint file; may not exist yet.
@@ -104,6 +104,8 @@ def trim_truncated(path: Path) -> int:
             intact = False
     if intact:
         return 0
+    backup = path.with_name(f"{path.name}.truncated-{time.time_ns()}.bak")
+    shutil.copy2(path, backup)
     tmp = path.with_suffix(".tmp")
     with gzip.open(tmp, "wt", encoding="utf-8") as fh:
         fh.writelines(lines)
@@ -137,9 +139,10 @@ def read_progress(path: Path) -> tuple[int, bool, int, dict[str, str]]:
                 try:
                     record = json.loads(line)
                 except json.JSONDecodeError:
+                    done = False
                     break
+                done = bool(record.get("done"))
                 if record.get("done"):
-                    done = True
                     continue
                 if not record.get("ok") and record.get("reason") != "miss":
                     continue  # a failed request: retry it, do not count it as tried
@@ -150,6 +153,7 @@ def read_progress(path: Path) -> tuple[int, bool, int, dict[str, str]]:
                     for other in named - {record["plotno"]}:
                         via.setdefault(other, record["plotno"])
     except (EOFError, OSError, zlib.error):
+        done = False
         log.warning("%s: unreadable tail; resuming after plot %d", path, highest)
     return highest, done, hits, via
 
@@ -177,6 +181,8 @@ def crawl_sheet(
 ) -> tuple[int, int]:
     """Walk one sheet's plot numbers upward, probing ahead to find its end.
 
+    A portal failure is checkpointed before it propagates to the caller.
+
     Args:
         session: Portal session to fetch with.
         giscode: The sheet to crawl.
@@ -186,25 +192,31 @@ def crawl_sheet(
     Returns:
         Requests made and plots found (including ones already known
         from a previous run).
-
-    Raises:
-        PortalError: When a request fails after retries; the failure is
-            checkpointed first so the next run resumes after it.
     """
     path = sheet_file(giscode)
     trim_truncated(path)
-    start, done, hits, via = read_progress(path)
+    _, done, hits, via = read_progress(path)
     if done:
         return 0, hits
     tried = 0
     known = set(via)
     probed: set[int] = set()
+    answered: dict[int, bool] = {}
+    if path.exists():
+        with gzip.open(path, "rt", encoding="utf-8") as checkpoint:
+            for line in checkpoint:
+                record = json.loads(line)
+                if record.get("ok") or record.get("reason") == "miss":
+                    answered[int(record["plotno"])] = bool(record.get("ok"))
+    last_hit = max((p for p, ok in answered.items() if ok), default=0)
 
     with gzip.open(path, "at", encoding="utf-8") as fh:
 
         def fetch(plot: int) -> bool:
             """Fetch one plot number, checkpoint it, and say whether it exists."""
-            nonlocal tried, hits
+            nonlocal tried, hits, last_hit
+            if plot in answered:
+                return answered[plot]
             record: dict[str, Any] = {
                 "giscode": giscode,
                 "plotno": str(plot),
@@ -215,6 +227,8 @@ def crawl_sheet(
                 record.update(ok=True, via=via.get(str(plot)))
                 fh.write(json.dumps(record, ensure_ascii=False) + "\n")
                 fh.flush()
+                answered[plot] = True
+                last_hit = max(last_hit, plot)
                 return True
             try:
                 data = session.plot_info(giscode, str(plot))
@@ -227,15 +241,18 @@ def crawl_sheet(
                 record.update(ok=False, reason="miss")
             else:
                 hits += 1
+                last_hit = max(last_hit, plot)
                 record.update(ok=True, data=data)
                 for other in integer_plots(data.get("ownerplots")) - {str(plot)}:
                     known.add(other)
                     via.setdefault(other, str(plot))
             fh.write(json.dumps(record, ensure_ascii=False) + "\n")
             fh.flush()
+            answered[plot] = data is not None
             return data is not None
 
-        plot, misses = start, 0
+        # Replay saved answers: an ahead probe is not a safe resume position.
+        plot, misses = 0, 0
         while plot < max_plot:
             plot += 1
             if plot in probed:
@@ -256,16 +273,26 @@ def crawl_sheet(
                     found = plot + offset
                     break
             if found is None:
+                if plot < last_hit:
+                    continue
                 break
             misses = 0
         fh.write(json.dumps({"giscode": giscode, "done": True, "high": plot}) + "\n")
     return tried, hits
 
 
-def main() -> None:
-    """Command-line entry point: crawl the queued sheets with a worker pool."""
+def run() -> None:
+    """Crawl the queued sheets with a worker pool.
+
+    Raises:
+        SystemExit: With status 1 if any sheet failed, allowing a supervisor
+            to retry the unfinished pass.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--districts", help="comma-separated district codes")
+    parser.add_argument(
+        "--priority-file", type=Path, help="text file of sheet codes to process first"
+    )
     parser.add_argument(
         "--giscodes", help="comma-separated giscodes (overrides --districts)"
     )
@@ -295,6 +322,9 @@ def main() -> None:
                 villages["district_code"].isin(args.districts.split(","))
             ]
         sheets = villages.loc[villages["has_data"], "giscode"].tolist()
+    if args.priority_file:
+        priority = set(args.priority_file.read_text().split())
+        sheets.sort(key=lambda code: code not in priority)
     log.info("%d sheets queued", len(sheets))
 
     pending: queue.Queue[str] = queue.Queue()
@@ -348,6 +378,26 @@ def main() -> None:
     for thread in threads:
         thread.join()
     log.info("done: %(sheets)d sheets, %(tried)d requests, %(hits)d plots", totals)
+    if totals["sheets"] != len(sheets):
+        log.error(
+            "%d sheets unfinished; retry this pass", len(sheets) - totals["sheets"]
+        )
+        raise SystemExit(1)
+
+
+def main() -> None:
+    """Run one fetcher at a time so checkpoint writers cannot overlap.
+
+    Raises:
+        SystemExit: With status 1 for unfinished work or 2 for an active writer.
+    """
+    PLOTS_DIR.mkdir(parents=True, exist_ok=True)
+    with (PLOTS_DIR / ".crawl.lock").open("a") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise SystemExit(2) from exc
+        run()
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ The ``info`` field is a short free-text block:
     1.) गुलाब सिंह चीता पुत्र अमर सिंह   हिस्सा- 2/3 जाति- मेर(मेहरात, चीता) सा. अजयसर खातेदार
     2.) सुगरा पत्नि खंगार सिंह   हिस्सा- 1/3 जाति- मेर(मेहरात, चीता)  सा देह खातेदार
 
-Each numbered line is one co-owner: a name, then a relation word (``पुत्र``
+Each numbered entry is one co-owner: a name, then a relation word (``पुत्र``
 son of, ``पत्नि`` wife of, ...) and the relative, then ``हिस्सा-`` the share,
 ``जाति-`` the caste, a residence introduced by ``सा.`` (*sakin*, resident
 of; ``देह`` means this very village) or ``निवासी`` or an urban address block
@@ -22,7 +22,8 @@ Odisha parser gives: a single regex silently drops every shape it did not
 anticipate, and the shapes here already include institutional owners with no
 relation and no caste, a caste with a parenthesised, comma-bearing gloss, and
 a residence that is an address rather than a village. Every row keeps the
-raw line so a parse can be audited against its source.
+raw line so a parse can be audited against its source. An entry can wrap across
+embedded newlines; its continuation belongs to the same owner.
 
 Usage:
     uv run rajasthan-ror-parse
@@ -58,19 +59,19 @@ SHARE_MARKER = "हिस्सा-"
 CASTE_MARKER = "जाति-"
 RESIDENCE = re.compile(r"\s(?:सा\.|सा(?=\s)|निवासी|मकान संख्या-)")
 TENURE = re.compile(r"\s(गैर[\s-]?खातेदार|सह[\s-]?खातेदार|खातेदार|मुरब्बा|अभिलेख)\s*$")
-OWNER_LINE = re.compile(r"^\s*(\d+)\.\)\s*(.*)$")
+OWNER_LINE = re.compile(r"^\s*(\d+)\.\)\s*(.*)$", re.DOTALL)
 AREA = re.compile(r"क्षेत्रफल\s*:\s*([\d.]+)")
 KHATA = re.compile(r"खाता संख्या\s*:\s*(\S+)")
 RELATION = re.compile(r"\s(" + "|".join(RELATIONS) + r")\s")
 
 
 def split_owner(line: str) -> dict[str, Any]:
-    """Split one numbered owner line into fields.
+    """Split one numbered owner block into fields.
 
     A missing marker yields ``None`` for that field, never a dropped row.
 
     Args:
-        line: One ``N.) ...`` line of the ``info`` block.
+        line: One ``N.) ...`` entry, including any embedded line breaks.
 
     Returns:
         ``owner_seq``, ``raw_line``, ``name``, ``relation``, ``relative``,
@@ -84,6 +85,7 @@ def split_owner(line: str) -> dict[str, Any]:
         raise ValueError(f"not an owner line: {line!r}")
     seq, rest = int(match.group(1)), match.group(2).strip()
     owner: dict[str, Any] = {"owner_seq": seq, "raw_line": rest}
+    rest = " ".join(rest.splitlines())
 
     tenure = TENURE.search(rest)
     if tenure:
@@ -127,12 +129,33 @@ def split_info(info: str) -> dict[str, Any]:
 
     Returns:
         ``area_ha`` (float or ``None``), ``khata`` (str or ``None``) and
-        ``owners``, one :func:`split_owner` dict per numbered line.
+        ``owners``, one :func:`split_owner` dict per numbered line or explicit
+        unnumbered government owner (whose ``owner_seq`` is ``None``).
     """
     lines = [line for line in info.split("\n") if line.strip()]
     area = next((AREA.search(line) for line in lines if AREA.search(line)), None)
     khata = next((KHATA.search(line) for line in lines if KHATA.search(line)), None)
-    owners = [split_owner(line) for line in lines if OWNER_LINE.match(line)]
+    blocks: list[list[str]] = []
+    active: list[str] | None = None
+    for line in lines:
+        if OWNER_LINE.match(line):
+            active = [line]
+            blocks.append(active)
+        elif line.strip() == "राज. सरकार":
+            blocks.append([line.strip()])
+            active = None
+        elif AREA.match(line.strip()) or KHATA.match(line.strip()):
+            active = None
+        elif active is not None:
+            active.append(line)
+    owners = []
+    for block in blocks:
+        if block == ["राज. सरकार"]:
+            owner = split_owner("0.) राज. सरकार")
+            owner["owner_seq"] = None
+        else:
+            owner = split_owner("\n".join(block))
+        owners.append(owner)
     return {
         "area_ha": float(area.group(1)) if area else None,
         "khata": khata.group(1) if khata else None,

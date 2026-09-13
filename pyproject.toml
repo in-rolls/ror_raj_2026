@@ -38,6 +38,7 @@ build-backend = "uv_build"
 module-name = "rajasthan_ror"
 
 [dependency-groups]
+crawl = ["supervisor>=4.3"]
 dev = [
     "ruff>=0.14",
     "pyright>=1.1.390",

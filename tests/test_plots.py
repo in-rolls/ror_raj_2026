@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import fcntl
 import gzip
 import json
+import sys
 from typing import TYPE_CHECKING
 
 import pytest
@@ -154,10 +156,87 @@ def test_resume_after_corrupt_tail_leaves_a_fully_readable_file(
     path = plots_dir / "g.jsonl.gz"
     raw = path.read_bytes()
     path.write_bytes(raw[: len(raw) - 40])
+    interrupted = path.read_bytes()
     assert trim_truncated(path) > 0
+    backups = list(plots_dir.glob("g.jsonl.gz.truncated-*.bak"))
+    assert len(backups) == 1
+    assert backups[0].read_bytes() == interrupted
     assert trim_truncated(path) == 0
+    assert list(plots_dir.glob("g.jsonl.gz.truncated-*.bak")) == backups
     crawl_sheet(FakeSession(existing), "g", probe_after=20, max_plot=5000)  # type: ignore[arg-type]
     with gzip.open(path, "rt") as fh:
         lines = [json.loads(line) for line in fh]
     assert lines[-1].get("done") is True
     assert sum(bool(r.get("ok")) and "done" not in r for r in lines) >= 40
+
+
+@pytest.mark.parametrize("fails", [False, True])
+def test_pass_reports_failures_to_supervisor(plots_dir, monkeypatch, fails):
+    monkeypatch.setattr(sys, "argv", ["fetch", "--giscodes", "g", "--workers", "1"])
+    monkeypatch.setattr(plots, "Session", lambda **kwargs: object())
+
+    def crawl(*args):
+        if fails:
+            raise PortalError("temporary failure")
+        return 1, 1
+
+    monkeypatch.setattr(plots, "crawl_sheet", crawl)
+    if fails:
+        with pytest.raises(SystemExit) as exc:
+            plots.main()
+        assert exc.value.code == 1
+    else:
+        plots.main()
+
+
+def test_resume_does_not_skip_numbers_before_a_successful_probe(plots_dir):
+    existing = set(range(1, 11)) | set(range(90, 121))
+    first = FakeSession(existing, fail_at=31)
+    with pytest.raises(PortalError):
+        crawl_sheet(first, "g", probe_after=20, max_plot=5000)
+    assert 110 in first.asked
+    resumed = FakeSession(existing)
+    _, hits = crawl_sheet(resumed, "g", probe_after=20, max_plot=5000)
+    assert hits == len(existing)
+    saved = records(plots_dir / "g.jsonl.gz")
+    assert {int(r["plotno"]) for r in saved if r.get("ok")} == existing
+    assert 110 not in resumed.asked
+
+
+def test_done_marker_must_be_last(plots_dir):
+    path = plots_dir / "g.jsonl.gz"
+    with gzip.open(path, "wt") as stream:
+        stream.write(json.dumps({"giscode": "g", "done": True}) + "\n")
+        stream.write(
+            json.dumps({"giscode": "g", "plotno": "1", "ok": True, "data": {}}) + "\n"
+        )
+    assert not read_progress(path)[1]
+
+
+def test_second_fetcher_cannot_write_checkpoints(plots_dir):
+    with (plots_dir / ".crawl.lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        with pytest.raises(SystemExit) as exc:
+            plots.main()
+        assert exc.value.code == 2
+
+
+def test_repair_walk_does_not_repeat_probes(plots_dir):
+    with gzip.open(plots_dir / "g.jsonl.gz", "wt") as stream:
+        stream.write(
+            json.dumps({"giscode": "g", "plotno": "701", "ok": True, "data": {}}) + "\n"
+        )
+    session = FakeSession({701, 702})
+    _, hits = crawl_sheet(session, "g", probe_after=20, max_plot=5000)
+    assert hits == 2
+    assert len(session.asked) == len(set(session.asked))
+    assert set(range(1, 701)) <= set(session.asked)
+
+
+def test_new_distant_probe_hit_prevents_early_completion(plots_dir):
+    session = FakeSession(set(range(1, 11)) | {350})
+    _, hits = crawl_sheet(session, "g", probe_after=20, max_plot=5000)
+    assert hits == 11
+    saved = records(plots_dir / "g.jsonl.gz")
+    answered = {int(row["plotno"]) for row in saved if "plotno" in row}
+    assert set(range(1, 351)) <= answered
