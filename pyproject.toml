@@ -21,9 +21,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/in-rolls/rajasthan-ror"
-Documentation = "https://in-rolls.github.io/rajasthan-ror/"
-Repository = "https://github.com/in-rolls/rajasthan-ror"
+Homepage = "https://github.com/in-rolls/ror_raj_2026"
+Documentation = "https://in-rolls.github.io/ror_raj_2026/"
+Repository = "https://github.com/in-rolls/ror_raj_2026"
 
 [project.scripts]
 rajasthan-ror-list = "rajasthan_ror.locations:main"

@@ -1,9 +1,7 @@
-# rajasthan-ror
+# Rajasthan Record of Rights 2026
 
-[![PyPI](https://img.shields.io/pypi/v/rajasthan-ror)](https://pypi.org/project/rajasthan-ror/)
-[![CI](https://github.com/in-rolls/rajasthan-ror/actions/workflows/ci.yml/badge.svg)](https://github.com/in-rolls/rajasthan-ror/actions/workflows/ci.yml)
-[![Docs](https://github.com/in-rolls/rajasthan-ror/actions/workflows/docs.yml/badge.svg)](https://in-rolls.github.io/rajasthan-ror/)
-[![Python](https://img.shields.io/pypi/pyversions/rajasthan-ror)](https://pypi.org/project/rajasthan-ror/)
+[![CI](https://github.com/in-rolls/ror_raj_2026/actions/workflows/ci.yml/badge.svg)](https://github.com/in-rolls/ror_raj_2026/actions/workflows/ci.yml)
+[![Docs](https://github.com/in-rolls/ror_raj_2026/actions/workflows/docs.yml/badge.svg)](https://in-rolls.github.io/ror_raj_2026/)
 
 Khatedar name, father's or husband's name, **jati** and residence for every
 integer-numbered plot on Rajasthan's digitised cadastre, scraped from the
