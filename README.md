@@ -1,8 +1,5 @@
 # Rajasthan Record of Rights 2026
 
-[![CI](https://github.com/in-rolls/ror_raj_2026/actions/workflows/ci.yml/badge.svg)](https://github.com/in-rolls/ror_raj_2026/actions/workflows/ci.yml)
-[![Docs](https://github.com/in-rolls/ror_raj_2026/actions/workflows/docs.yml/badge.svg)](https://in-rolls.github.io/ror_raj_2026/)
-
 Khatedar name, father's or husband's name, **jati** and residence for every
 integer-numbered plot on Rajasthan's digitised cadastre, scraped from the
 state's Bhu-Naksha map portal at <https://bhunaksha.rajasthan.gov.in>. Built
@@ -162,3 +159,7 @@ and the card under her husband; 11% of joined keys hit more than one card, so
 the key is a candidate, not an identity. `scripts/pilot/diag_pairs.py` prints the
 matched pairs for eyeballing and `scripts/pilot/diag_father.py` the near-misses.
 The join needs the ration data in `../milaan_raj`, which is not public.
+
+## Maintenance
+
+This is a point-in-time data collection; see the [shared maintenance policy](https://github.com/soodoku/data-repos#maintenance-policy). Run the affected parser tests when code changes and the relevant data validators when inputs or outputs change. Full-data checks and publication are explicit operations. Routine edits do not require hosted CI, Docker, a Python-version matrix, Preen or pre-commit.
