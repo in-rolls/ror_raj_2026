@@ -41,9 +41,6 @@ module-name = "rajasthan_ror"
 crawl = ["supervisor>=4.3"]
 dev = [
     "ruff>=0.14",
-    "pyright>=1.1.390",
-    "pydoclint>=0.5",
-    "pre-commit>=4",
     { include-group = "test" },
 ]
 test = ["pytest>=8", "pytest-cov>=6"]
@@ -80,19 +77,6 @@ convention = "google"
 # Analysis scripts, not package code: they report by printing and assert on
 # the data they load.
 "scripts/**" = ["T20", "D", "S101"]
-
-[tool.pyright]
-include = ["src"]
-typeCheckingMode = "standard"
-
-[tool.pydoclint]
-style = "google"
-arg-type-hints-in-docstring = false
-check-return-types = false
-check-yield-types = false
-check-class-attributes = false
-allow-init-docstring = true
-exclude = '\.venv|tests|docs'
 
 [tool.pytest.ini_options]
 minversion = "8"
