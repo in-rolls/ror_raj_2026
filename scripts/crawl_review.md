@@ -1,6 +1,6 @@
 Scheduled four-hour review authorized by the user in this chat. Review BOTH running land-record crawls:
-- /Users/soodoku/Documents/GitHub/rajasthan-ror
-- /Users/soodoku/Documents/GitHub/odisha-ror
+- /Users/soodoku/Documents/GitHub/ror_raj_2026
+- /Users/soodoku/Documents/GitHub/ror_odisha_2026
 
 Use the scrape-and-parse skill. Work in the existing checkouts, where the live raw data and Supervisor configurations reside. Preserve unrelated edits. The user authorized monitoring, restarting stopped crawlers, auditing the data, investigating anomalies, and a substantive report in this chat every four hours. Do not create another scheduler.
 
