@@ -16,4 +16,4 @@ scraper and parser.
 - Rajasthan schedule synonyms shipped as schema-versioned JSON and a jati
   string categoriser over them.
 
-[Unreleased]: https://github.com/in-rolls/ror_raj_2026/commits/main
+[Unreleased]: https://github.com/in-rolls/ror_rajasthan_2026/commits/main
